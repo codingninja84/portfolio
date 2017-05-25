@@ -1,0 +1,63 @@
+@media only screen and (max-width: 900px){
+  .pf-container{
+    flex-direction: column;
+
+  }
+
+}
+
+@media only screen and (min-width: 901px) {
+
+
+  .ib {
+    display: inline-block;
+    margin: 0px;
+  }
+
+  .contact-right {
+    text-align: right;
+  }
+
+  .contact-left {
+    text-align: left;
+  }
+
+  .menu {
+    margin-bottom: 5rem;
+  }
+
+
+  .pf-slider {
+    margin-bottom: 10%;
+  }
+/*Colors */
+  .menu a {
+    color: #808080;
+  }
+
+  .header {
+    color: #303030;
+  }
+
+  .cardDiv {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+  }
+
+  .cardColumn {
+    flex: 30%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin: 1%;
+  }
+
+  .frameworks {
+    width: 50%;
+  }
+}

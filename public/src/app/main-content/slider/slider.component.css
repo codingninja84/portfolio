@@ -1,0 +1,165 @@
+@media only screen and (max-width: 900px){
+  .pf-container{
+    flex-direction: column;
+  }
+
+}
+
+@media only screen and (max-width: 1200px) {
+
+  .previewDiv p {
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Lato', sans-serif;
+    font-size: .7rem;
+  }
+
+}
+
+
+@media only screen and (min-width: 901px) {
+
+  .ib {
+    display: inline-block;
+  }
+
+  .menu {
+    width: 100%;
+    padding: 0px;
+  }
+  .grid {
+    height: 40vh;
+    margin: 2rem auto;
+    overflow: hidden;
+  }
+
+  .segment {
+    background-color: transparent;
+  }
+
+  .slider {
+    height: 30vh;
+    width: 70vw;
+  }
+
+  .slide1 {
+    border: none;
+    background-image: url("/../../assets/slide1.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  .slide2 {
+      background-image: url("/slide2.png");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+
+  }
+
+  .slide3 {
+      background-image: url("/slide3.jpg");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+
+  }
+
+  .pre1 {
+    position: absolute;
+    top: 50%;
+    left : 0%;
+    height: 20%;
+    overflow: hidden;
+    width : 99%;
+  }
+
+  .pre2 {
+    position: absolute;
+    top: 30%;
+    left : 0%;
+    height: 20%;
+    overflow: hidden;
+    width : 99%;
+  }
+
+  .pre3 {
+    position: absolute;
+    top: 40%;
+    left : 0%;
+    height: 20%;
+    overflow: hidden;
+    width : 99%;
+  }
+
+  /*colors*/
+
+
+  .previewDiv {
+    background: rgba(39,47,56, .90);
+    text-align: center;
+    border-left: 5px solid tomato;
+    border-right: 5px solid tomato;
+    overflow: hidden;
+  }
+
+  .psuedoPreviewDiv::before {
+    content: "";
+    position: absolute;
+    width: 10px;
+    left: 0%;
+    border-top: 5px solid tomato;
+    border-radius: 0px 0px 3px 2px;
+  }
+
+
+  .previewDiv::before {
+    content: "";
+    position: absolute;
+    width: 10px;
+    right: 0%;
+    border-top: 5px solid tomato;
+    border-radius: 0px 0px 2px 3px;
+  }
+
+  .previewDiv::after {
+    content: "";
+    position: absolute;
+    bottom: 0%;
+    width: 10px;
+    left: 0%;
+    border-bottom: 5px solid tomato;
+    border-radius: 3px 2px 0px 0px;
+  }
+
+  .psuedoPreviewDiv::after {
+    content: "";
+    position: absolute;
+    bottom: 0%;
+    width: 10px;
+    right: 0%;
+    border-bottom: 5px solid tomato;
+    border-radius: 2px 3px 0px 0px;
+  }
+
+
+  .previewDiv h4 {
+    margin: 1rem 0px auto;
+    padding: 0px;
+    font-family: 'Lato', sans-serif;
+  }
+
+  .blue {
+    color: lightblue;
+  }
+
+  .tomato {
+    color: tomato;
+  }
+
+  .green {
+    color: #87C23F;
+  }
+
+}
