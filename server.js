@@ -21,6 +21,6 @@ var route_setter = require("./server/config/routes/routes.js")
 route_setter(app);
 
 // tell the express app to listen on port 8000
-app.listen(8000, function() {
-  console.log("listening on port 8000");
+app.listen(5000, function() {
+  console.log("listening on port 5000");
 })

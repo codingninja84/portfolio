@@ -21,21 +21,35 @@ import { WindowRef} from './windowRef'
        ]),
    trigger('intro', [
      state('high', style({
-       boxShadow: ".3rem .2rem .7rem rgba(0, 0, 255, .5)"
+       boxShadow: ".5rem 0 .7rem rgba(0, 255, 255, .5)"
      })),
      state('low', style({
-       boxShadow: "-.2rem .3 .7rem rgba(0, 255, 0, .5)"
+       boxShadow: ".2rem .3rem .7rem rgba(0, 255, 0, .5)",
      })),
-     state('left', style({
-       boxShadow: ".3 -.2rem .7rem rgba(0, 255, 0 .5)"
+     state('top', style({
+       boxShadow: "-.3rem -.5rem .8rem rgba(0, 0, 255, .5)",
      })),
-     state('right', style({
-       boxShadow: "0 .3rem .7rem rgba(255, 255, 255, .5)"
+     state('bottom', style({
+       boxShadow: "-.2rem .5rem 1rem rgba(0, 255, 255, .5)",
+
      })),
-     transition('high => low', animate('250ms ease-in-out')),
-     transition('low => high', animate('250ms ease-in-out')),
-     transition('left => right', animate('250ms ease-in-out')),
-     transition('right => left', animate('250ms ease-in-out')),
+     animate("1s"),
+     transition('high => low', group([
+       animate('.25s ease-in-out', style({boxShadow: ".2rem .3 .7rem rgba(0, 255, 0, .5)"}),),
+       animate('.25s ease-in-out', style({boxShadow: ".2rem .3 .7rem rgba(255, 0, 0, .5)"}),)
+   ])),
+      transition('low => high', group([
+        animate('.25s ease-in-out', style({boxShadow: ".2rem .3 .7rem rgba(0, 255, 0, .5)"}),),
+        animate('.25s ease-in-out', style({boxShadow: ".2rem .3 .7rem rgba(255, 0, 0, .5)"}),)
+    ])),
+     transition('top => bottom',  group([
+       animate('.25s ease-in-out', style({boxShadow: "-.2rem .3 .7rem rgba(0, 255, 0, .5)"}),),
+       animate('.25s ease-in-out', style({boxShadow: "-.2rem -.3 .7rem rgba(255, 0, 0, .5)"}),)
+   ])),
+     transition('bottom => top',  group([
+       animate('.25s ease-in-out', style({boxShadow: "-.2rem -.3 .7rem rgba(255, 255, 0, .5)"}),),
+       animate('.25s ease-in-out', style({boxShadow: ".2rem .3 .7rem rgba(255, 0, 0, .5)"}),)
+   ])),
    ]),
 trigger('background', [
  state('inactive', style({
@@ -97,26 +111,30 @@ trigger('largeBars', [
  ]
 })
 export class AppComponent {
-  skills: any = ["skills: true","Angular", "React", "Javascript", "TypeScript", "Swift", "MongoDB", "Python", "Node", "Express", "Django", "AWS", "Ubuntu", "Flask", "iOS", "CSS3", "HTML5", "Flex-Box", "SQL", "Foundation", "Core Motion", "Less", true]
+  skills: any = ["skills: true","Angular", "React", "JavaScript", "TypeScript", "Swift", "Python", "MongoDB", "Node", "Express", "Django", "AWS", "Ubuntu", "Flask", "iOS", "CSS3", "HTML5", "Flex-Box", "SQL", "Foundation", "Core Motion", "Less", true]
   enterState = "inactive";
   logoState = "inactive";
   breakState = "active";
   break = "inactive";
   backgroundState = "inactive";
   colorStateLeft = "high";
-  colorStateRight = "left";
+  colorStateRight = "top";
   barState = 'shrink'
   skillSpeed = 2000;
   counter = 0;
   skill = "";
+  ambient: any;
   build: any;
   bass: any;
+  welcome: any;
 
   constructor(private winRef: WindowRef ) { }
 
   ngOnInit(){
-    this.build = this.winRef.document.getElementById("build")
-    this.bass = this.winRef.document.getElementById("bass")
+    this.build = this.winRef.document.getElementById("build");
+    this.bass = this.winRef.document.getElementById("bass");
+    this.ambient = this.winRef.document.getElementById("ambient");
+    this.welcome = this.winRef.document.getElementById("welcome");
     let interval = setInterval(()=>{
       let output = this.dance()
       if (output == false){
@@ -131,9 +149,10 @@ export class AppComponent {
   }
 
   toggleEnter() {
-    this.enterState = "void"
-    this.colorStateLeft = "stop"
-    setTimeout(()=>{this.go()},1500)
+    this.ambient.play();
+    this.enterState = "void";
+    this.colorStateLeft = "stop";
+    setTimeout(()=>{this.go()},1500);
   }
 
   go(){
@@ -163,7 +182,7 @@ export class AppComponent {
   dance(){
     if (this.colorStateLeft !== "stop"){
         this.colorStateLeft = this.colorStateLeft == "high" ? 'low' : "high";
-        this.colorStateRight = this.colorStateRight == "left" ? 'right' : "left";
+        setTimeout(()=>{this.colorStateRight = this.colorStateRight == "top" ? 'bottom' : "top";}, 500)
     } else {
       return false;
     }
@@ -182,6 +201,7 @@ export class AppComponent {
   switchBackground(){
     this.breakState = "inactive";
     this.break = "void";
-
+    this.ambient.play();
+    setTimeout(()=>{this.welcome.play();},2000)
   }
 }

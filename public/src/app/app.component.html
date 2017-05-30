@@ -1,6 +1,6 @@
 
 <div  class="pf-container">
-  <div [@color]="breakState" class="intro">
+  <!-- <div [@color]="breakState" class="intro">
     <div class="enter"[@introToggle]="enterState" [@intro]="colorStateLeft" [@intro]="colorStateRight"(click)="toggleEnter()"><h3>Click to enter</h3></div>
   </div>
   <div [@background]="backgroundState" class="count" [ngSwitch]="skill">
@@ -15,19 +15,26 @@
     </div>
   </div>
   <div [@breakTop]="break" class="breakTop"></div>
-  <div [@breakBottom]="break" class="breakBottom"></div>
-  <div class="pf-sidebar-con">
-    <div class="pf-sidebar" *ngIf="breakState=='inactive'">
+  <div [@breakBottom]="break" class="breakBottom"></div> -->
+  <!-- <div class="pf-sidebar-con">
+    *ngIf="breakState=='inactive'"
+    <div class="pf-sidebar">
       <app-sidebar></app-sidebar>
     </div>
-  </div>
-  <div class="pf-content" *ngIf="breakState=='inactive'">
+  </div> -->
+  <div class="pf-content">
     <app-main-content></app-main-content>
   </div>
 </div>
-<audio id="bass">
+<!-- <audio id="bass">
   <source src="../assets/bassDrop.wav" type="audio/wav">
 </audio>
 <audio id="build">
   <source src="../assets/build.wav" type="audio/wav">
 </audio>
+<audio id="ambient">
+  <source src="../assets/slide.wav" type="audio/wav">
+</audio>
+<audio id="welcome">
+  <source src="../assets/welcome.wav" type="audio/wav">
+</audio> -->

@@ -14,12 +14,6 @@
 }
 
 
-.pf-content {
-  padding: 3vw;
-  padding-top: 1vw;
-}
-
-
 
 /*small screen*/
 @media only screen and (max-width: 900px){
@@ -52,7 +46,8 @@
     }
 
     .pf-content {
-      flex: 65vw;
+      flex: 100vw;
+      position: relative;
     }
 
 
@@ -184,7 +179,7 @@
     width: 75%;
     background-color: #1e1e1e;
     }
-    
+
   .breakBottom {
     z-index: 400;
     position: fixed;

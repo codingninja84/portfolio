@@ -16,6 +16,15 @@ body {
   line-height: 1.5;
   padding: 0px;
   margin: 0px;
+  font-family: delicious;
+}
+
+h1 {
+  font-size: 2.75rem;
+}
+
+h2 {
+  font-size: 2.5rem;
 }
 
 ::-webkit-scrollbar {
@@ -33,4 +42,19 @@ body {
 
 ::-webkit-scrollbar-corner {
   background-color: transparent;
+}
+
+@font-face {
+  font-family: delicious;
+  src: url("/assets/Fonts/Delicious-Roman.otf");
+}
+
+@media only screen and (max-width: 900px){
+  h1 {
+    font-size: 2.25rem;
+  }
+
+  h2 {
+    font-size: 2.0rem;
+  }
 }

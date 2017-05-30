@@ -9,7 +9,8 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 import { MainContentComponent } from './main-content/main-content.component';
 import { SliderComponent } from './main-content/slider/slider.component';
 import { EditorComponent } from './main-content/editor/editor.component';
-import { WindowRef } from './windowRef'
+import { WindowRef } from './windowRef';
+import { IntroComponent } from './intro/intro.component'
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { WindowRef } from './windowRef'
     SidebarComponent,
     MainContentComponent,
     SliderComponent,
-    EditorComponent
+    EditorComponent,
+    IntroComponent
   ],
   imports: [
     BrowserModule,
