@@ -10,7 +10,7 @@
 }
 
 .pf-content {
-  color: #303030;
+  z-index: 9999;
 }
 
 
@@ -21,13 +21,6 @@
     flex-direction: column;
   }
 
-  .pf-sidebar {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-  }
 }
 
 @media only screen and (min-width: 901px) {
@@ -37,23 +30,7 @@
       width: 100vw;
     }
 
-    .pf-sidebar{
-      flex: 35vw;
-      position: fixed;
-      height: 100vh;
-      width: 35vw;
-      overflow: auto;
-    }
 
-    .pf-content {
-      flex: 100vw;
-      position: relative;
-    }
-
-
-    .pf-sidebar-con {
-      flex: 35%;
-    }
 
     .intro {
       position: fixed;

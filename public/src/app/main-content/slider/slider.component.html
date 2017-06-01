@@ -1,43 +1,20 @@
-<script src="/script/slider.js"></script>
-
-<div class="ui-grid">
-<div class="ui sixteen column grid">
-<div class="ui pointing menu">
-  <a [@sarda]="sliderState" (mouseenter)="toggleMenu()" (mouseleave)="toggleMenu()" class="item sarda">
-    <div [@sardaDiv]="sliderState" class="ui segment slider slide1">
-      <div class="ui grid">
-      </div>
+<div class="container">
+  <div class="row">
+    <div class="column">
+      <div class="title"><h3>Klinefelter</h3></div>
     </div>
-    <div class="previewDiv pre1" [@previewTextSlide1]="sliderState">
-      <div class="psuedoPreviewDiv">
-        <h4 class="tomato ib"><i class="quote left icon"></i></h4><h4 class="blue ib">KLINEFELTER</h4><h4 class="tomato ib"><i class="quote right icon"></i></h4>
-      </div>
+    <div class="column">
+      <div class="title"><h3>Sarda</h3></div>
     </div>
-  </a>
-  <a [@sarda]="sardaState" (mouseenter)="toggleSarda()" (mouseleave)="toggleSarda()" class="item">
-    <div [@sardaDiv]="sardaState" class="ui segment slider slide2">
-      <div class="ui grid">
-      </div>
-    </div>
-    <div class="previewDiv pre2" [@previewTextSlide2]="sardaState">
-      <div class="psuedoPreviewDiv">
-        <h4 class="tomato ib"><i class="quote left icon"></i></h4><h4 class="blue ib">SERVICE MASTER</h4><h4 class="tomato ib"><i class="quote right icon"></i></h4></div>
-      </div>
-  </a>
-  <a [@dojo]="dojoState" (mouseenter)="toggleDojo()" (mouseleave)="toggleDojo()" class="item">
-    <div [@dojoDiv]="dojoState" class="ui segment slider slide3">
-      <div class="ui grid">
-      </div>
-    </div>
-    <div class="previewDiv pre3" [@previewTextSlide3]="dojoState">
-      <div class="psuedoPreviewDiv">
-        <h4 class="tomato ib"><i class="quote left icon"></i></h4><h4 class="blue ib">DojStagram</h4><h4 class="tomato ib"><i class="quote right icon"></i></h4></div>
-      </div>
-  </a>
-  <div class="right menu">
-    <div class="item">
+    <div class="column">
+      <div class="title"><h3>Dojstagram</h3></div>
     </div>
   </div>
-</div>
-</div>
+  <div class="row-top">
+    <h2>
+      <span class="before-block">RECENT</span><span class="blocks">projects</span>
+    </h2>
+    <h4>These are just a few examples of some recent projects that I have completed. Hover over each div to see what technologies were used, or click on each one to see the deployed project/github.</h4>
+  </div>
+  <div class="mountains"></div>
 </div>

@@ -33,9 +33,12 @@ input {
   text-align: left;
 }
 
-.after-block * {
-  margin-bottom: 0;
-  padding-bottom: 0;
+
+.full-width-component {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .header {
@@ -144,6 +147,9 @@ input {
   flex-direction: row;
   flex-wrap: wrap;
   padding: 2rem;
+  margin-bottom: 0;
+  margin-top: 1rem;
+  position: relative;
 }
 
 .about-me {
@@ -161,6 +167,77 @@ input {
   justify-content: flex-start;
   align-items: center;
   flex-wrap: wrap;
+}
+
+.triangle-left {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: -9999;
+  overflow: hidden;
+  width: 0;
+  height: 0;
+
+}
+
+.triangle-right {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  z-index: -9999;
+  overflow: hidden;
+  width: 0;
+  height: 0;
+}
+
+.quote {
+  text-align: center;
+  background-image: url('/assets/green-gradient.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  color: #000;
+  padding: 5% 15%;
+}
+.quote h1 {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 300;
+}
+
+.column {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.pf-slider {
+  width: 100%;
+}
+
+.black {
+  height: 50vh;
+  background-color: black;
+  color: #fff;
+}
+
+.download-resume {
+  height: 15vw;
+  width: 15vw;
+  color: #fff;
+  background: radial-gradient(rgba(0, 160, 255, 1), rgba(0, 200, 255, 1), rgba(0, 255, 255, 1));
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1rem solid rgba(0, 150, 255, .6);
+  margin: 0 2%;
+}
+
+.download-resume:hover {
+  box-shadow: 0 0 6rem #fff;
+  text-shadow: 0 0 1rem #fff;
+  cursor: pointer;
 }
 
 @media only screen and (max-width: 900px){
@@ -245,8 +322,6 @@ input {
     z-index: -1;
   }
 
-
-
 }
 
 @media only screen and (min-width: 901px) {
@@ -314,6 +389,10 @@ input {
     background-position: right bottom;
   }
 
+  .column {
+    margin: 1rem;
+    padding: 5%;
+  }
 }
 
 /*Modal*/

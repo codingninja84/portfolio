@@ -1,17 +1,68 @@
-@media only screen and (max-width: 900px){
-  .pf-container{
-    flex-direction: column;
-  }
-
+.row-top {
+  width: 38%;
+  height: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+  text-align: left;
+  color: #fff;
+  padding: 8%;
 }
 
-@media only screen and (max-width: 1200px) {
+.row {
+  width: 58;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  color: #fff;
+  padding: 5%;
+}
 
-  .previewDiv p {
-    margin: 0px;
-    padding: 0px;
-    font-family: 'Lato', sans-serif;
-    font-size: .7rem;
+
+
+.container{
+  height: auto;
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.5)), url('/assets/city.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  position: relative;
+}
+
+.blocks {
+  background-color: #F58B79;
+  color: #fff;
+  -webkit-clip-path: polygon(100% 28%, 100% 100%, 0% 100%, 1% 17%, 20% 32%, 43% 27%, 52% 21%, 71% 33%);
+  clip-path: polygon(100% 28%, 100% 100%, 0% 100%, 1% 17%, 20% 32%, 43% 27%, 52% 21%, 71% 33%);
+  position: relative;
+  padding: 0 .5rem;
+}
+
+.before-block {
+  color: #fff;
+  margin-left: 0;
+  text-align: left;
+}
+
+
+
+
+@media only screen and (max-width: 900px){
+  .container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
   }
 
 }
@@ -19,149 +70,51 @@
 
 @media only screen and (min-width: 901px) {
 
-  .ib {
-    display: inline-block;
-  }
 
-  .menu {
-    width: 100%;
-    padding: 0px;
-  }
-  .grid {
-    height: 40vh;
-    margin: 2rem auto;
-    overflow: hidden;
-  }
-
-  .segment {
-    background-color: transparent;
-  }
-
-  .slider {
-    height: 30vh;
-    width: 70vw;
-  }
-
-  .slide1 {
-    border: none;
-    background-image: url("/../../assets/slide1.png");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-  }
-
-  .slide2 {
-      background-image: url("/slide2.png");
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-
-  }
-
-  .slide3 {
-      background-image: url("/../../assets/slide3.jpg");
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-
-  }
-
-  .pre1 {
-    position: absolute;
-    top: 50%;
-    left : 0%;
-    height: 20%;
-    overflow: hidden;
-    width : 99%;
-  }
-
-  .pre2 {
-    position: absolute;
-    top: 30%;
-    left : 0%;
-    height: 20%;
-    overflow: hidden;
-    width : 99%;
-  }
-
-  .pre3 {
-    position: absolute;
-    top: 40%;
-    left : 0%;
-    height: 20%;
-    overflow: hidden;
-    width : 99%;
-  }
-
-  /*colors*/
-
-
-  .previewDiv {
-    background: rgba(39,47,56, .90);
+  .column{
+    position: relative;
     display: flex;
     justify-content: center;
-    align-content: center;
-    border-left: 5px solid tomato;
-    border-right: 5px solid tomato;
-    overflow: hidden;
+    align-items: center;
+    flex-direction: column;
+    height: 30vh;
+    width: 30vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background: linear-gradient(rgba(18, 235, 171, .8), rgba(18, 235, 171, .8)), url('/assets/slide3.jpg');
+    clip-path: polygon(20% 0%, 0% 20%, 30% 50%, 0% 80%, 20% 100%, 50% 70%, 80% 100%, 100% 80%, 70% 50%, 100% 20%, 80% 0%, 50% 30%);
   }
 
-  .psuedoPreviewDiv::before {
-    content: "";
+  .column:first-child {
+    -webkit-clip-path: polygon(0 35%, 35% 35%, 35% 0%, 65% 0%, 65% 35%, 100% 35%, 100% 65%, 65% 65%, 65% 100%, 35% 100%, 35% 65%, 0 65%);
+    clip-path: polygon(0 35%, 35% 35%, 35% 0%, 65% 0%, 65% 35%, 100% 35%, 100% 65%, 65% 65%, 65% 100%, 35% 100%, 35% 65%, 0 65%);
+        background: linear-gradient(rgba(18, 235, 171, .8), rgba(18, 235, 171, .8)), url('/assets/slide3.jpg');
+  }
+
+  .column:last-child {
+    -webkit-clip-path: polygon(0 35%, 100% 35%, 100% 65%, 0 65%);
+    clip-path: polygon(0 35%, 100% 35%, 100% 65%, 0 65%);
+    background: linear-gradient(rgba(18, 235, 171, .8), rgba(18,235, 171, .8)), url('/assets/slide3.jpg');
+  }
+
+  .title {
+    background-color: rgba(39 ,47 ,56 ,9);
+    color: #fff;
+    width: 100%;
+    text-align: center;
+  }
+
+  .mountains {
     position: absolute;
-    width: 10px;
-    left: 0%;
-    border-top: 5px solid tomato;
-    border-radius: 0px 0px 3px 2px;
+    bottom: 0;
+    background-image: url('/assets/mountains.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 15vh;
+    width: 100%;
   }
 
-
-  .previewDiv::before {
-    content: "";
-    position: absolute;
-    width: 10px;
-    right: 0%;
-    border-top: 5px solid tomato;
-    border-radius: 0px 0px 2px 3px;
-  }
-
-  .previewDiv::after {
-    content: "";
-    position: absolute;
-    bottom: 0%;
-    width: 10px;
-    left: 0%;
-    border-bottom: 5px solid tomato;
-    border-radius: 3px 2px 0px 0px;
-  }
-
-  .psuedoPreviewDiv::after {
-    content: "";
-    position: absolute;
-    bottom: 0%;
-    width: 10px;
-    right: 0%;
-    border-bottom: 5px solid tomato;
-    border-radius: 2px 3px 0px 0px;
-  }
-
-
-  .previewDiv h4 {
-    margin: 1rem 0px auto;
-    padding: 0px;
-    font-family: 'Lato', sans-serif;
-  }
-
-  .blue {
-    color: lightblue;
-  }
-
-  .tomato {
-    color: tomato;
-  }
-
-  .green {
-    color: #87C23F;
-  }
 
 }

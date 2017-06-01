@@ -10,7 +10,8 @@ import { MainContentComponent } from './main-content/main-content.component';
 import { SliderComponent } from './main-content/slider/slider.component';
 import { EditorComponent } from './main-content/editor/editor.component';
 import { WindowRef } from './windowRef';
-import { IntroComponent } from './intro/intro.component'
+import { IntroComponent } from './intro/intro.component';
+import { LanguagesComponent } from './main-content/languages/languages.component'
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { IntroComponent } from './intro/intro.component'
     MainContentComponent,
     SliderComponent,
     EditorComponent,
-    IntroComponent
+    IntroComponent,
+    LanguagesComponent
   ],
   imports: [
     BrowserModule,
