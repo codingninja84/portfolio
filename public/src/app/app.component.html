@@ -1,41 +1,7 @@
 
 <div  class="pf-container">
-  <!-- <div [@color]="breakState" class="intro">
-    <div class="enter"[@introToggle]="enterState" [@intro]="colorStateLeft" [@intro]="colorStateRight"(click)="toggleEnter()"><h3>Click to enter</h3></div>
-  </div>
-  <div [@background]="backgroundState" class="count" [ngSwitch]="skill">
-    <div class="skillContainer" *ngSwitchDefault><div><p class="bracket">{{'{'}}</p></div>{{skill}}<div><p class="bracket">{{'}'}}</p></div></div>
-    <div class="barContainer" *ngSwitchCase="true">
-      <div [@smallBars]="barState" class="smallBars"></div>
-      <div [@largeBars]="barState" class="largeBars"></div>
-      <div [@smallBars]="barState" class="smallBars"></div>
-      <div [@largeBars]="barState" class="largeBars"></div>
-      <img src="/assets/logo.png">
-      <div class="spinner"></div>
-    </div>
-  </div>
-  <div [@breakTop]="break" class="breakTop"></div>
-  <div [@breakBottom]="break" class="breakBottom"></div> -->
-  <!-- <div class="pf-sidebar-con">
-    *ngIf="breakState=='inactive'"
-    <div class="pf-sidebar">
-      <app-sidebar></app-sidebar>
-    </div>
-  </div> -->
   <div class="pf-content">
-    <app-intro></app-intro>
+    <!-- <app-intro *ngIf="document == 'ready'"></app-intro> -->
+    <app-main-content></app-main-content>
   </div>
-  <app-main-content></app-main-content>
 </div>
-<!-- <audio id="bass">
-  <source src="../assets/bassDrop.wav" type="audio/wav">
-</audio>
-<audio id="build">
-  <source src="../assets/build.wav" type="audio/wav">
-</audio>
-<audio id="ambient">
-  <source src="../assets/slide.wav" type="audio/wav">
-</audio>
-<audio id="welcome">
-  <source src="../assets/welcome.wav" type="audio/wav">
-</audio> -->

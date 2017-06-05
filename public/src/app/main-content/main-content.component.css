@@ -9,6 +9,7 @@
   src: url("/assets/Fonts/Delicious-Heavy.otf");
 }
 
+
 input {
   border: none;
   width: 80%;
@@ -22,6 +23,7 @@ input {
   color: #fff;
   padding: 0 .5rem;
   margin-right: 0;
+  -moz-clip-path: polygon(100% 28%, 100% 100%, 0% 100%, 1% 17%, 20% 32%, 43% 27%, 52% 21%, 71% 33%);
   -webkit-clip-path: polygon(100% 28%, 100% 100%, 0% 100%, 1% 17%, 20% 32%, 43% 27%, 52% 21%, 71% 33%);
   clip-path: polygon(100% 28%, 100% 100%, 0% 100%, 1% 17%, 20% 32%, 43% 27%, 52% 21%, 71% 33%);
   position: relative;
@@ -80,6 +82,7 @@ input {
   background: #eee;
   margin: 1rem;
   padding: 0 5% 0 1%;
+  color: #272f38;
 }
 
 .contact-div {
@@ -87,8 +90,8 @@ input {
   background-color: rgba(39,47,56,.7);
   height: 50vh;
   width: 40%;
-  color: #fff;
   overflow: hidden;
+  -moz-clip-path: polygon(100% 0, 0 21%, 85% 100%);
   clip-path: polygon(100% 0, 0 21%, 85% 100%);
   text-align: center;
 }
@@ -125,12 +128,20 @@ input {
   border: none;
   font-size: 1.2rem;
   transition: transform 400ms;
+  color: #272f38;
+  box-shadow: 0 0 5rem #000;
+  position: absolute;
+  right: 5%;
+  top: 15%;
+  bottom: 0;
 }
 
 .toggleSidebar:hover {
   cursor: pointer;
   transform: scale(1.2, 1.2);
+  box-shadow: 0 0 5rem rgba(18, 235, 171, 1);
 }
+
 
 .replay-intro {
   position: absolute;
@@ -209,6 +220,7 @@ input {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  text-align: center;
 }
 
 .pf-slider {
@@ -336,9 +348,10 @@ input {
 
 
   .menu {
+    position: relative;
     height: 15%;
     width: 100%;
-    margin-bottom: 10rem;
+    margin-bottom: 10%;
     background-color: transparent;
     display: flex;
     flex-direction: row;

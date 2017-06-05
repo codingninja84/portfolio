@@ -1,5 +1,6 @@
-import { Component,  OnInit, trigger, state, style, transition, animate, keyframes, group } from '@angular/core';
+import { Component,  OnInit, trigger, state, style, transition, animate, keyframes, group, Input } from '@angular/core';
 import { WindowRef} from './../windowRef'
+import { IntroService} from './intro.service'
 
 @Component({
   selector: 'app-intro',
@@ -112,6 +113,9 @@ trigger('largeBars', [
 })
 export class IntroComponent implements OnInit {
   skills: any = ["skills: true","Angular", "React", "JavaScript", "TypeScript", "Swift", "Python", "MongoDB", "Node", "Express", "Django", "AWS", "Ubuntu", "Flask", "iOS", "CSS3", "HTML5", "Flex-Box", "SQL", "Foundation", "Core Motion", "Less", true]
+  skillSpeed = 2000;
+  counter = 0;
+  skill = "";
   enterState = "inactive";
   logoState = "inactive";
   breakState = "active";
@@ -120,15 +124,12 @@ export class IntroComponent implements OnInit {
   colorStateLeft = "high";
   colorStateRight = "top";
   barState = 'shrink'
-  skillSpeed = 2000;
-  counter = 0;
-  skill = "";
   ambient: any;
   build: any;
   bass: any;
   welcome: any;
 
-  constructor(private winRef: WindowRef ) { }
+  constructor(private winRef: WindowRef, private introService: IntroService ) { }
 
   ngOnInit(){
     this.build = this.winRef.document.getElementById("build");
@@ -195,6 +196,7 @@ export class IntroComponent implements OnInit {
 
   fadeLogo(){
     this.backgroundState= "inactive";
+    this.introService.breakState();
     setTimeout(()=>{this.switchBackground()}, 1000)
   }
 

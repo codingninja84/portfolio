@@ -12,6 +12,7 @@ import { EditorComponent } from './main-content/editor/editor.component';
 import { WindowRef } from './windowRef';
 import { IntroComponent } from './intro/intro.component';
 import { LanguagesComponent } from './main-content/languages/languages.component'
+import { IntroService } from './intro/intro.service'
 
 @NgModule({
   declarations: [
@@ -29,7 +30,7 @@ import { LanguagesComponent } from './main-content/languages/languages.component
     HttpModule,
     BrowserAnimationsModule
   ],
-  providers: [WindowRef],
+  providers: [WindowRef, IntroService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

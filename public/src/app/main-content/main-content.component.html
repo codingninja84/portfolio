@@ -1,4 +1,5 @@
 <div class="pf-container">
+  <!-- *ngIf="introService.load == true" -->
   <div class="header">
     <div class="contact">
       <div class="contact-right">
@@ -15,7 +16,7 @@
       <a class="item">Projects</a>
       <a class="item">Experience</a>
       <a class="item">Algorithms</a>
-      <button class="toggleSidebar">Contact</button>
+      <button [@menu]="stickyState" class="toggleSidebar">Contact</button>
     </div>
     <div (click)="toggleMenu()" class="mobile-menu"><h4>MENU</h4></div>
     <div class="menu-shadow"></div>
@@ -32,11 +33,11 @@
         <div class="contact-form">
           <h3>Need a developer? Let's Talk!</h3>
           <input type="text" name="" value="" placeholder="Your Name">
-          <button class="go">Go!</button>
+          <button class="go" (click)="toggleForm()">Go!</button>
         </div>
       </div>
       <div class="replay-intro">
-        <button type="button" name="button" class="intro">REPLAY INTRO</button>
+        <button  type="button" name="button" class="intro" (click)="replayIntro()">REPLAY INTRO</button>
       </div>
     </div>
   </div>
@@ -71,13 +72,12 @@
   <div class="full-width-component black">
     <h1>IF YOU SEE A FIT...</h1>
     <div class="download-resume"><h3>DOWNLOAD</h3></div>
-    <h1><< GET MY RESUME HERE!</h1>
+    <h1><i class="arrow left icon"></i>GET MY RESUME HERE!</h1>
   </div>
-  <app-languages></app-languages>
 </div>
 
-<div [@modal]="menuState" class="modal">
-  <div class="modal-content">
+<div [@menuModal]="menuState" class="modal">
+  <div *ngIf="menuState == 'active'" class="modal-content">
     <div class="nav-item">
       <a href="#"><h3>ABOUT</h3></a>
     </div>
@@ -94,5 +94,16 @@
       <a href="#"><h3>ALGORITHMS</h3></a>
     </div>
   </div>
-
 </div>
+
+  <div [@formModal]="formState" class="modal">
+    <div class="modal-content">
+      <form *ngIf="formState == 'active'" class=""  method="post">
+        <input type="text" name="" value="" placeholder="First Name">
+        <input type="text" name="" value="" placeholder="Last Name">
+        <input type="text" name="" value="" placeholder="Email">
+        <input type="text" name="" value="" placeholder="Message">
+        <input type="submit" name="" value="Fire!" class="toggleSidebar">
+      </form>
+    </div>
+  </div>
