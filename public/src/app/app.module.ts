@@ -12,7 +12,8 @@ import { EditorComponent } from './main-content/editor/editor.component';
 import { WindowRef } from './windowRef';
 import { IntroComponent } from './intro/intro.component';
 import { LanguagesComponent } from './main-content/languages/languages.component'
-import { IntroService } from './intro/intro.service'
+import { IntroService } from './intro/intro.service';
+import { FooterComponent } from './main-content/footer/footer.component'
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { IntroService } from './intro/intro.service'
     SliderComponent,
     EditorComponent,
     IntroComponent,
-    LanguagesComponent
+    LanguagesComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

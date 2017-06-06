@@ -349,7 +349,7 @@ input {
 
   .menu {
     position: relative;
-    height: 15%;
+    height: 15vw;
     width: 100%;
     margin-bottom: 10%;
     background-color: transparent;
@@ -364,23 +364,28 @@ input {
     margin-bottom: 10%;
   }
 /*Colors */
-  .menu a {
+  .item {
     color: #fff;
+    width: 70px;
+    height: 70px;
     padding: 1.5rem;
     font-size: 1.5rem;
     font-family: delicious;
     position: relative;
-    width: auto;
-    height: auto;
     z-index: 555;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+    margin: auto 3rem;
   }
 
-  .menu a:hover {
+  .item:hover {
     color: #fff;
     cursor: pointer;
   }
 
-  .menu a::before {
+  .item::before {
     content: "";
     width: 100%;
     height: 100%;
@@ -398,7 +403,7 @@ input {
   }
 
 
-  .menu a:hover::before {
+  .item:hover::before {
     background-position: right bottom;
   }
 

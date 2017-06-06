@@ -1,0 +1,61 @@
+.full-width-component {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  background-color: black;
+  border-top: 1px solid #fff;
+  padding: 5%;
+}
+
+.row {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+.column {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  text-align: center;
+  width: 50%;
+  height: 5vh;
+  padding: 2%;
+}
+
+i {
+  color: #F58B79;
+  font-size: 2.5rem;
+  padding: 2rem;
+}
+
+.menu {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  color: #F58B79;
+}
+
+.icon, .column a{
+  color: #eee;
+  font-size: 1rem;
+  padding: 2% 0;
+}
+
+.menu a {
+  color: #fff;
+  padding: 1rem;
+  font-size: 1.5rem;
+}
+
+.column a > p {
+  display: inline-block;
+}

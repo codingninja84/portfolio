@@ -11,11 +11,11 @@
       </div>
     </div>
     <div class="menu">
-      <a class="item">About</a>
-      <a class="item">Languages</a>
-      <a class="item">Projects</a>
-      <a class="item">Experience</a>
-      <a class="item">Algorithms</a>
+      <div class="item">About</div>
+      <div class="item">Languages</div>
+      <div class="item">Projects</div>
+      <div class="item">Experience</div>
+      <div class="item">Algorithms</div>
       <button [@menu]="stickyState" class="toggleSidebar">Contact</button>
     </div>
     <div (click)="toggleMenu()" class="mobile-menu"><h4>MENU</h4></div>
@@ -70,10 +70,15 @@
   </div>
     <app-slider></app-slider>
   <div class="full-width-component black">
-    <h1>IF YOU SEE A FIT...</h1>
+    <div>
+      <h1>IF YOU SEE A FIT...</h1>
+    </div>
     <div class="download-resume"><h3>DOWNLOAD</h3></div>
-    <h1><i class="arrow left icon"></i>GET MY RESUME HERE!</h1>
+    <div>
+      <h1><i class="arrow left icon"></i>GET MY RESUME HERE!</h1>
+    </div>
   </div>
+  <app-footer></app-footer>
 </div>
 
 <div [@menuModal]="menuState" class="modal">
