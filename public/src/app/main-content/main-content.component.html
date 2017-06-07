@@ -1,22 +1,13 @@
 <div class="pf-container">
   <!-- *ngIf="introService.load == true" -->
   <div class="header">
-    <div class="contact">
-      <div class="contact-right">
-        <!-- <h5 class="ib">Contact | </h5>
-        <a href="mailto:rhanna1461@hotmail.com"><i class=" mail icon"></i></a>
-        <a href="tel:2537778162"><i class=" phone icon"></i></a>
-        <a href="http://linkedin.com/rhanna1461"><i class=" linkedin icon"></i></a>
-        <a href="http://github.com/codingninja84"><i class=" github icon"></i></a> -->
-      </div>
-    </div>
     <div class="menu">
       <div class="item">About</div>
       <div class="item">Languages</div>
       <div class="item">Projects</div>
       <div class="item">Experience</div>
       <div class="item">Algorithms</div>
-      <button [@menu]="stickyState" class="toggleSidebar">Contact</button>
+      <button [@menu]="stickyState" [@contact]="contactState" class="toggleSidebar" (click)="toggleSidebar()">{{contact}}</button>
     </div>
     <div (click)="toggleMenu()" class="mobile-menu"><h4>MENU</h4></div>
     <div class="menu-shadow"></div>
@@ -32,7 +23,7 @@
       <div class="contact-div">
         <div class="contact-form">
           <h3>Need a developer? Let's Talk!</h3>
-          <input type="text" name="" value="" placeholder="Your Name">
+          <input type="text" name="firstName" [(ngModel)]="firstName"  required minlength="4" maxlength="24" placeholder="Your Name">
           <button class="go" (click)="toggleForm()">Go!</button>
         </div>
       </div>
@@ -49,7 +40,7 @@
       <h2>
         <span class="blocks">about</span><span class="after-block">ME <i class=" hand peace icon"></i></span>
       </h2>
-      <p>I am first and foremost, a husband and a father. I have two beautful, young daughters and that by itself is a full time job. Beyond that, I am a Software Developer and I love to code! I decided a few years ago that my career in management wasn't the most fulfilling, so I decided to make a career change and it was one of the best decisions of my life. Fast forward two years and I have finished school and now I am looking for a SDE position with a great company! Feel free to checkout some of the samples, languages and algorithms that I have shared, and please feel free to reach out! </p>
+      <p>I am first and foremost, a husband and a father. I have two beautful, young daughters and that by itself is a full time job. Beyond that, I am a Software Developer and I love to code! I decided a few years ago that my career in management wasn't the most fulfilling, so I decided to make a career change and it was one of the best decisions of my life. Fast forward two years and I have finished school and now I am looking for a SDE position with a great company! Feel free to check-out some of the samples, languages and algorithms that I have shared, and please feel free to reach out! </p>
     </div>
     <div class="full-width-component">
       <div class="column">
@@ -73,7 +64,7 @@
     <div>
       <h1>IF YOU SEE A FIT...</h1>
     </div>
-    <div class="download-resume"><h3>DOWNLOAD</h3></div>
+    <a href="/assets/richard.hanna.resume.docx" download><div class="download-resume"><h3>DOWNLOAD</h3></div></a>
     <div>
       <h1><i class="arrow left icon"></i>GET MY RESUME HERE!</h1>
     </div>
@@ -101,14 +92,22 @@
   </div>
 </div>
 
-  <div [@formModal]="formState" class="modal">
-    <div class="modal-content">
-      <form *ngIf="formState == 'active'" class=""  method="post">
-        <input type="text" name="" value="" placeholder="First Name">
-        <input type="text" name="" value="" placeholder="Last Name">
-        <input type="text" name="" value="" placeholder="Email">
-        <input type="text" name="" value="" placeholder="Message">
-        <input type="submit" name="" value="Fire!" class="toggleSidebar">
-      </form>
-    </div>
+<div [@formModal]="formState" class="modal">
+  <div class="modal-content">
+    <form [@playSubmit]="submit" *ngIf="formState == 'active'" class="form"  method="post">
+      <input type="text" required minlength="4" maxlength="24" name="firstName" [(ngModel)]="firstName" placeholder="{{firstName}}">
+      <input type="text" name="lastName" [(ngModel)]="lastName" placeholder="Last Name">
+      <input type="text" name="phone" [(ngModel)]="phone" placeholder="Phone">
+      <input type="text" name="email" [(ngModel)]="email" placeholder="Email">
+      <input type="text" name="message" [(ngModel)]="message" placeholder="Message">
+      <input type="submit"  value="Fire!" class="submit" (click)="toggleSubmit()">
+    </form>
+    <i [@thumbUp]="thumbState"class="fa fa-thumbs-o-up fa-5x" aria-hidden="true"></i>
   </div>
+</div>
+
+<div [@contactModal]="contactState" class="sidebar-modal">
+  <div class="modal-content contact-content">
+    <app-sidebar></app-sidebar>
+  </div>
+</div>

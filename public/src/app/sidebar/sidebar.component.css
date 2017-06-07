@@ -1,98 +1,47 @@
-/*Size and position*/
-::-webkit-scrollbar-track {
-    margin-top: 20px;
-}
-
-
-.pf-container {
-  text-align: center;
-}
-
-h1 {
-  font-size: 2.75rem
-}
-
-.ib, p {
-  display: inline-block;
-}
-
-.bar {
-  padding: .5rem;
-}
-
-.editor {
-  height: 30vh;
-  width : 100%;
-  overflow-x: scroll;
-}
-
-.submit {
-  margin: 1.5rem auto;
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   width: 100%;
-  height: 3rem;
 }
 
-.contact {
+.links {
+  width: auto;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
   text-align: left;
+  flex-direction: column;
 }
 
-
-/*Color*/
-.name {
-    color: tomato;
+.links > * {
+  display: inline-block;
+  transition: color 700ms;
 }
 
-.nameDiv {
-  margin: 0px;
+.links > *:hover {
+  color: #fff;
 }
 
-.title {
-  margin: 0px;
-  font-family: 'Handlee', cursive;
-  color: #87C23F;
+.container {
+  color: #fff;
+  font-size: 1.25rem;
 }
 
-.blue {
-  color: lightblue;
-  padding: .25rem;
+.container a {
+  color: #fff;
+  background-size: 300% 100%;
+  background-image: linear-gradient(to right, transparent 50%, rgba(11, 118, 219, .9) 50%);
+  background-position: left bottom;
+  transition: background-position 800ms;
 }
 
-.purple {
-  color: purple;
-  padding: .25rem;
+.container a:hover {
+  cursor: pointer;
+  background-position: right bottom;
 }
 
-.tomato {
-  color: tomato;
-}
-
-.white {
-  color: #ccc;
-}
-
-.submit {
-  border: 2px solid lightblue;
-  background-color: transparent;
-  border-radius: 8px;
-  font-size: 1.2rem;
-  color: lightblue;
-}
-
-.submit:hover {
-  background-color: lightblue;
-  border-radius: 8px;
-  font-size: 1.2rem;
-  color: #272F38;
-}
-
-.editor {
-  color: #ddd;
-  background-color: #333;
-  border-radius: 10%;
-  padding: 1rem;
-  box-shadow: inset 1px 1px 3px #000;
-}
-
-.break {
-  display: block;
+i {
+    color: #0b76db;
 }
