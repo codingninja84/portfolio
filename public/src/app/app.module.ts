@@ -13,7 +13,8 @@ import { WindowRef } from './windowRef';
 import { IntroComponent } from './intro/intro.component';
 import { LanguagesComponent } from './main-content/languages/languages.component'
 import { IntroService } from './intro/intro.service';
-import { FooterComponent } from './main-content/footer/footer.component'
+import { FooterComponent } from './main-content/footer/footer.component';
+import { IconsComponent } from './main-content/languages/icons/icons.component'
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { FooterComponent } from './main-content/footer/footer.component'
     EditorComponent,
     IntroComponent,
     LanguagesComponent,
-    FooterComponent
+    FooterComponent,
+    IconsComponent
   ],
   imports: [
     BrowserModule,

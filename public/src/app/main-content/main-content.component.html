@@ -23,7 +23,7 @@
       <div class="contact-div">
         <div class="contact-form">
           <h3>Need a developer? Let's Talk!</h3>
-          <input type="text" name="firstName" [(ngModel)]="firstName"  required minlength="4" maxlength="24" placeholder="Your Name">
+          <input type="text" name="firstName" class="name" [(ngModel)]="firstName"  required minlength="4" maxlength="24" placeholder="Your Name">
           <button class="go" (click)="toggleForm()">Go!</button>
         </div>
       </div>
@@ -56,20 +56,20 @@
     <h1>A great leader's courage to fulfill his vision comes from passion, not position.</h1>
     <h3> —John Maxwell</h3>
   </div>
-  <div class="full-width-component">
+  <div *ngIf="loadLowerComponent == 'true'" class="full-width-component">
     <app-languages></app-languages>
   </div>
     <app-slider></app-slider>
-  <div class="full-width-component black">
-    <div>
+  <div *ngIf="loadLowerComponent == 'true'" class="full-width-component black">
+    <div class="resume-font">
       <h1>IF YOU SEE A FIT...</h1>
     </div>
-    <a href="/assets/richard.hanna.resume.docx" download><div class="download-resume"><h3>DOWNLOAD</h3></div></a>
-    <div>
+    <a href="/assets/richard.hanna.resume.docx" download><div class="download-resume resume-font"><h3>DOWNLOAD</h3></div></a>
+    <div class="resume-font">
       <h1><i class="arrow left icon"></i>GET MY RESUME HERE!</h1>
     </div>
   </div>
-  <app-footer></app-footer>
+  <app-footer *ngIf="loadLowerComponent == 'true'"></app-footer>
 </div>
 
 <div [@menuModal]="menuState" class="modal">
@@ -94,14 +94,14 @@
 
 <div [@formModal]="formState" class="modal">
   <div class="modal-content">
-    <form [@playSubmit]="submit" *ngIf="formState == 'active'" class="form"  method="post">
-      <input type="text" required minlength="4" maxlength="24" name="firstName" [(ngModel)]="firstName" placeholder="{{firstName}}">
-      <input type="text" name="lastName" [(ngModel)]="lastName" placeholder="Last Name">
-      <input type="text" name="phone" [(ngModel)]="phone" placeholder="Phone">
-      <input type="text" name="email" [(ngModel)]="email" placeholder="Email">
-      <input type="text" name="message" [(ngModel)]="message" placeholder="Message">
-      <input type="submit"  value="Fire!" class="submit" (click)="toggleSubmit()">
-    </form>
+    <form [@playSubmit]="submit" *ngIf="formState == 'active'" class="form" name="contactForm" #contactForm="ngForm"  method="post">
+      <input type="text" required minlength="4" maxlength="24" name="firstName" [(ngModel)]="firstName"  placeholder="{{firstName}}">
+      <input type="text" required minlength="4" maxlength="24" name="lastName" [(ngModel)]="lastName" placeholder="Last Name">
+      <input type="text" required minlength="4" maxlength="24" name="phone" [(ngModel)]="phone" placeholder="Phone">
+      <input type="email" required minlength="4" maxlength="24" name="email" [(ngModel)]="email" placeholder="Email">
+      <input type="text" required minlength="4" maxlength="24" name="message" [(ngModel)]="message" placeholder="Message">
+      <input type="submit" *ngIf="contactForm.form.valid" value="Fire!" class="submit" [disabled]="!contactForm.form.valid" (click)="toggleSubmit()">
+    </form> 
     <i [@thumbUp]="thumbState"class="fa fa-thumbs-o-up fa-5x" aria-hidden="true"></i>
   </div>
 </div>

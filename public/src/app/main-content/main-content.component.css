@@ -55,9 +55,9 @@ input {
 
 .header-content {
   display: flex;
-  flex-direction: row;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
 }
 
 .intro {
@@ -92,7 +92,7 @@ input {
   height: 50vh;
   width: 40%;
   overflow: hidden;
-  -moz-clip-path: polygon(100% 0, 0 21%, 85% 100%);
+  -webkit-clip-path: polygon(100% 0, 0 21%, 85% 100%);
   clip-path: polygon(100% 0, 0 21%, 85% 100%);
   text-align: center;
   color: #fff;
@@ -175,12 +175,39 @@ input {
   box-shadow: inset 0 0 1.2rem #F58B79;
 }
 
+.ng-invalid {
+  box-shadow: none;
+}
+
+.ng-valid {
+  box-shadow: inset 0 0 1.2rem rgba(18, 235, 171, 1);
+}
+
+.form input.ng-invalid.ng-touched {
+  box-shadow: inset 0 0 1.2rem rgba(255, 0, 0, 1);
+}
+
+.form input.ng-valid {
+  box-shadow: inset 0 0 1.2rem rgba(18, 235, 171, 1);
+}
+
+.backgroundColor {
+  background-color: rgba(18, 235, 171, 1);
+}
+
+.form {
+  box-shadow: none;
+}
+
+
+
 .modal-content i {
   font-size: 10rem;
   color: #0b76db;
   position: fixed;
   top: 50%;
 }
+
 
 .field {
   position: relative;
@@ -231,7 +258,6 @@ input {
   width: 100%;
   justify-content: center;
   align-items: center;
-  flex-direction: row;
   flex-wrap: wrap;
   padding: 2rem;
   margin-bottom: 0;
@@ -304,9 +330,12 @@ input {
 }
 
 .black {
-  height: 50vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
   background-color: black;
   color: #fff;
+  padding: auto 10%;
 }
 
 .download-resume {
@@ -319,8 +348,8 @@ input {
   justify-content: center;
   align-items: center;
   border: 1rem solid rgba(0, 150, 255, .6);
-  margin: 0 2%;
 }
+
 
 .download-resume:hover {
   box-shadow: 0 0 6rem #fff;
@@ -328,18 +357,166 @@ input {
   cursor: pointer;
 }
 
-@media only screen and (max-width: 900px){
-  .pf-container{
-    flex-direction: column;
 
+/*Modal*/
+.modal-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: transparent;
+  margin: 5% auto;
+  padding: 5%;
+  width: 80vw;
+  height: 80vh;
+  overflow: hidden;
+}
+
+.modal {
+  position: fixed;
+  z-index: 5;
+  left: 0%;
+  top: 0%;
+  width: 100vw;
+  height: 100vh;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.9);
+  z-index: 9500;
+}
+
+.sidebar-modal {
+  position: fixed;
+  z-index: 9000;
+  left: 0%;
+  top: 0%;
+  width: 30vw;
+  height: 100vh;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.9);
+}
+
+.nav-item {
+  width: 100%;
+  height: 8%;
+  margin: 1rem;
+  font-family: delicious;
+  text-align: left;
+  border-bottom: .5px solid rgba(255,255,255,0.7);
+}
+
+.nav-item a {
+  color: #fff;
+  font-family: delicious;
+}
+
+@media only screen and (max-width: 370px){
+  .headline {
+    width: 100%;
   }
 
   .header-content {
     flex-direction: column;
   }
 
+  .contact-div {
+    width: 80%;
+  }
+
   .menu {
     display: none;
+  }
+
+  .contact-form {
+    top: 15%;
+    right: 12%;
+  }
+
+  .content {
+    flex-direction: column;
+  }
+
+  .column {
+    width: 100%;
+  }
+
+  .black {
+    height: 80vh;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .download-resume {
+    width: 30vw;
+    height: 30vw;
+  }
+
+  .resume-font h3 {
+    font-size: .75rem;
+  }
+
+  .resume-font h3 {
+    font-size: .9rem;
+  }
+
+  .arrow.left {
+    display: none;
+  }
+
+  .download-resume {
+    border: .75rem solid rgba(0, 150, 255, .6);
+  }
+}
+
+@media only screen and (min-width: 371px){
+  .menu {
+    display: none;
+  }
+
+  .headline {
+    width: 100%;
+  }
+
+  .contact-div {
+    width: 80%;
+  }
+
+  .contact-form {
+    top: 15%;
+    right: 12%;
+  }
+
+  .content {
+    flex-direction: column;
+  }
+
+  .black {
+    height: 80vh;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .download-resume {
+    width: 30vw;
+    height: 30vw;
+  }
+
+  .resume-font h3 {
+    font-size: .8rem;
+  }
+
+  .resume-font h3 {
+    font-size: 1rem;
+  }
+
+  .arrow.left {
+    display: none;
+  }
+}
+
+@media only screen and (min-width: 600px){
+  .pf-container{
+    flex-direction: column;
+
   }
 
   .headline {
@@ -351,6 +528,23 @@ input {
   .tagLine, .title {
     padding: 2%;
     margin: .75rem;
+  }
+
+  .content {
+    flex-direction: row;
+  }
+
+  .column {
+  width: 30%;
+  margin: 1%;
+}
+
+.about-me {
+  width: 35%;
+}
+
+  .bio {
+    margin-bottom: 2%;
   }
 
   .toggleSidebar {
@@ -414,12 +608,33 @@ input {
       width: 100vw;
   }
 
+  .black {
+    height: 80vh;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .download-resume {
+    width: 30vw;
+    height: 30vw;
+  }
+
+  .resume-font h3 {
+    font-size: 1.5rem;
+  }
+
+  .arrow.left {
+    display: none;
+  }
 }
 
-@media only screen and (min-width: 901px) {
-
+@media only screen and (min-width: 900px){
   .mobile-menu {
     display: none;
+  }
+
+  .header-content {
+    flex-direction: row;
   }
 
   .headline {
@@ -431,7 +646,6 @@ input {
     position: relative;
     height: 15vw;
     width: 100%;
-    margin-bottom: 5%;
     background-color: transparent;
     display: flex;
     flex-direction: row;
@@ -439,11 +653,6 @@ input {
     align-items: center;
   }
 
-
-  .pf-slider {
-    margin-bottom: 10%;
-  }
-/*Colors */
   .item {
     color: #fff;
     width: 70px;
@@ -495,56 +704,37 @@ input {
   .sidebar-modal {
       width: 30vw;
   }
+  .black {
+    height: 50vh;
+    flex-direction: row;
+  }
+
+  .download-resume {
+    height: 15vw;
+    width: 15vw;
+  }
+
+  .resume-font h3 {
+    font-size: 1.25rem;
+  }
+
+  .resume-font h1 {
+    font-size: 2rem;
+  }
+
+  .contact-div {
+    height: 50vh;
+    width: 40%;
+  }
 }
 
-/*Modal*/
-.modal-content {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  background-color: transparent;
-  margin: 5% auto;
-  padding: 5%;
-  width: 80vw;
-  height: 80vh;
-  overflow-x: hidden;
-  overflow-y: auto;
-}
+@media only screen and (min-width: 1300px){
+  .resume-font h3 {
+    font-size: 2rem;
+  }
 
-.modal {
-  position: fixed;
-  z-index: 5;
-  left: 0%;
-  top: 0%;
-  width: 100vw;
-  height: 100vh;
-  overflow: auto;
-  background-color: rgba(0,0,0,0.9);
-  z-index: 9500;
-}
-
-.sidebar-modal {
-  position: fixed;
-  z-index: 9000;
-  left: 0%;
-  top: 0%;
-  width: 30vw;
-  height: 100vh;
-  overflow: auto;
-  background-color: rgba(0,0,0,0.9);
-}
-
-.nav-item {
-  width: 100%;
-  height: 8%;
-  margin: 1rem;
-  font-family: delicious;
-  text-align: left;
-  border-bottom: .5px solid rgba(255,255,255,0.7);
-}
-
-.nav-item a {
-  color: #fff;
-  font-family: delicious;
+  .contact-div {
+    height: 50vh;
+    width: 40%;
+  }
 }

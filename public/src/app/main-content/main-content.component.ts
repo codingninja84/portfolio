@@ -1,5 +1,6 @@
 import { Component,  OnInit, trigger, state, style, transition, animate, HostListener, keyframes } from '@angular/core';
-import { IntroService } from '../intro/intro.service'
+import { IntroService } from '../intro/intro.service';
+
 @Component({
   selector: 'app-main-content',
   templateUrl: './main-content.component.html',
@@ -136,6 +137,7 @@ export class MainContentComponent implements OnInit {
   contact = 'Contact';
   submit = 'active';
   menu: any;
+  loadLowerComponent: string;
 
   //form inputs
   firstName: string;
@@ -148,7 +150,6 @@ export class MainContentComponent implements OnInit {
 
   ngOnInit() {
     this.menu = document.getElementsByClassName('menu');
-    console.log(this.menu)
   }
 
   @HostListener('window:scroll', ['$event'])
@@ -157,11 +158,12 @@ export class MainContentComponent implements OnInit {
     let scrollHeight = event.path[1].scrollY;
     if (scrollHeight > this.menu[0].offsetHeight){
       this.stickyState = 'active';
+      this.loadLowerComponent = "true";
     }
     else {
       this.stickyState = 'inactive';
     }
-    console.debug("Scroll Event", event.path[1].scrollY);
+
   }
 
 

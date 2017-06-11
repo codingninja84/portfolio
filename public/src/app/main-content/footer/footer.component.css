@@ -7,7 +7,6 @@
   text-align: center;
   background-color: black;
   border-top: 1px solid #fff;
-  padding: 5%;
 }
 
 .row {
@@ -23,26 +22,25 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: row;
   text-align: center;
-  width: 50%;
-  height: 5vh;
-  padding: 2%;
+}
+
+.menu {
+  height: 70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #F58B79;
 }
 
 i {
   color: #F58B79;
   font-size: 2.5rem;
   padding: 2rem;
+  margin: 1%;
 }
 
-.menu {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  color: #F58B79;
-}
 
 .icon, .column a{
   color: #eee;
@@ -58,4 +56,92 @@ i {
 
 .column a > p {
   display: inline-block;
+}
+
+@media only screen and (max-width: 370px){
+  .full-width-component {
+    height: 70vh;
+  }
+
+  .column {
+    height: 25%;
+    width: 50%;
+    padding: 2%;
+    flex-direction: row;
+  }
+
+  .column:last-child {
+    height: 5%;
+    width: 100%;
+    padding: 2%;
+    flex-direction: row;
+  }
+
+  .menu {
+    flex-direction: column;
+  }
+
+}
+
+@media only screen and (min-width: 371px){
+  .full-width-component {
+    height: 70vh;
+  }
+
+  .column {
+    height: 25%;
+    width: 50%;
+    padding: 2%;
+    flex-direction: row;
+  }
+
+  .column:last-child {
+    height: 5%;
+    width: 100%;
+    padding: 2%;
+    flex-direction: row;
+  }
+
+  .menu {
+    height: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #F58B79;
+  }
+
+}
+
+@media only screen and (min-width: 600px){
+  .full-width-component {
+    height: 50vh;
+  }
+
+  .menu {
+    height: 70%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    color: #F58B79;
+  }
+}
+
+@media only screen and (min-width: 900px){
+  .full-width-component {
+    height: 40vh;
+  }
+}
+
+@media only screen and (min-width: 1300px){
+
+  .icon, .column a{
+    font-size: 1rem;
+  }
+
+  .menu a {
+    font-size: 1.5rem;
+  }
+
 }
