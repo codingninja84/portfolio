@@ -11,7 +11,7 @@ app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, "./public/dist")));
 
 
-require('./server/config/mongoose.js');
+// require('./server/config/mongoose.js');
 
 //import the routes files
 //this runs the file and stores module.exports
