@@ -2,7 +2,7 @@ var express = require('express');
 var app = express();
 var bodyParser = require('body-parser')
 var path = require('path');
-var mongoose = require('Mongoose')
+var mongoose = require('mongoose')
 mongoose.promise = global.promise
 
 // require bodyParser since we need to handle post data for adding a user
