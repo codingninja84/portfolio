@@ -10,6 +10,9 @@
   padding: 5%;
 }
 
+.column-ff {
+  margin: 1rem;
+}
 
 .row {
   display: flex;

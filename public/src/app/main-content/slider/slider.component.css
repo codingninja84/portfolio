@@ -2,7 +2,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.5)), url('/assets/city.jpg');
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.5)), url('/assets/beach.png');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -68,6 +68,10 @@
   -webkit-clip-path: polygon(0 35%, 100% 35%, 100% 65%, 0 65%);
   clip-path: polygon(0 35%, 100% 35%, 100% 65%, 0 65%);
   background: linear-gradient(rgba(18, 235, 171, .8), rgba(18,235, 171, .8)), url('/assets/slide3.jpg');
+}
+
+.column-ff {
+  margin: 1%;
 }
 
 .title {

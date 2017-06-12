@@ -11,10 +11,7 @@ import { IntroService } from './intro/intro.service'
 export class AppComponent {
 
   constructor(private winRef: WindowRef, private intro: IntroService ) { }
-  document: string;
   ngOnInit(){
-
-    this.document = "ready";
 
       }
 

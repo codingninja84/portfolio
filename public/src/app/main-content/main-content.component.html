@@ -2,14 +2,14 @@
   <!-- *ngIf="introService.load == true" -->
   <div class="header">
     <div class="menu">
-      <div class="item">About</div>
-      <div class="item">Languages</div>
-      <div class="item">Projects</div>
-      <div class="item">Experience</div>
-      <div class="item">Algorithms</div>
+      <a href="#about"><div class="item">About</div></a>
+      <a href="#languages"><div class="item">Languages</div></a>
+      <a href="#projects"><div class="item">Projects</div></a>
+      <a href="#experience"><div class="item">Experience</div></a>
+      <a href="#algorithms"><div class="item">Algorithms</div></a>
       <button [@menu]="stickyState" [@contact]="contactState" class="toggleSidebar" (click)="toggleSidebar()">{{contact}}</button>
     </div>
-    <div (click)="toggleMenu()" class="mobile-menu"><h4>MENU</h4></div>
+    <div [@mobileMenu]="menuState" (click)="toggleMenu()" class="mobile-menu"><h4>{{menuText}}</h4></div>
     <div class="menu-shadow"></div>
     <div class="header-content">
       <div class="headline">
@@ -17,11 +17,11 @@
           <h1>RICH HANNA</h1>
         </div>
         <div class="tagLine">
-          <h2>UI/UX DEVELOPER + NATIVE OF SEATTLE</h2>
+          <h2>UI/UX DEVELOPER + LIFETIME LEARNER</h2>
         </div>
       </div>
-      <div class="contact-div">
-        <div class="contact-form">
+      <div class="contact-div ff">
+        <div class="ffcf contact-form">
           <h3>Need a developer? Let's Talk!</h3>
           <input type="text" name="firstName" class="name" [(ngModel)]="firstName"  required minlength="4" maxlength="24" placeholder="Your Name">
           <button class="go" (click)="toggleForm()">Go!</button>
@@ -36,7 +36,7 @@
     <div class="about-me">
       <img class="ui small left floated circular image" src="/assets/rich_hanna.jpg" alt="Rich Hanna ">
     </div>
-    <div class="bio">
+    <div id="about" class="bio">
       <h2>
         <span class="blocks">about</span><span class="after-block">ME <i class=" hand peace icon"></i></span>
       </h2>
@@ -56,12 +56,12 @@
     <h1>A great leader's courage to fulfill his vision comes from passion, not position.</h1>
     <h3> —John Maxwell</h3>
   </div>
-  <div *ngIf="loadLowerComponent == 'true'" class="full-width-component">
+  <div id="languages" *ngIf="loadLowerComponent == 'true'  || browser == 'ff'" class="full-width-component">
     <app-languages></app-languages>
   </div>
-    <app-slider></app-slider>
-  <div *ngIf="loadLowerComponent == 'true'" class="full-width-component black">
-    <div class="resume-font">
+    <app-slider id="projects"></app-slider>
+  <div *ngIf="loadLowerComponent == 'true' || browser == 'ff'" class="full-width-component black">
+    <div id="experience" class="resume-font">
       <h1>IF YOU SEE A FIT...</h1>
     </div>
     <a href="/assets/richard.hanna.resume.docx" download><div class="download-resume resume-font"><h3>DOWNLOAD</h3></div></a>
@@ -69,25 +69,25 @@
       <h1><i class="arrow left icon"></i>GET MY RESUME HERE!</h1>
     </div>
   </div>
-  <app-footer *ngIf="loadLowerComponent == 'true'"></app-footer>
+  <app-footer *ngIf="loadLowerComponent == 'true' || browser == 'ff'"></app-footer>
 </div>
 
 <div [@menuModal]="menuState" class="modal">
   <div *ngIf="menuState == 'active'" class="modal-content">
-    <div class="nav-item">
-      <a href="#"><h3>ABOUT</h3></a>
+    <div class="nav-item" (click)="toggleMenu()">
+      <a href="#about"><h3>ABOUT</h3></a>
     </div>
-    <div class="nav-item">
-      <a href="#"><h3>LANGUAGES</h3></a>
+    <div class="nav-item" (click)="toggleMenu()">
+      <a href="#langauges"><h3>LANGUAGES</h3></a>
     </div>
-    <div class="nav-item">
-      <a href="#"><h3>PROJECTS</h3></a>
+    <div class="nav-item" (click)="toggleMenu()">
+      <a href="#projects"><h3>PROJECTS</h3></a>
     </div>
-    <div class="nav-item">
-      <a href="#"><h3>EXPERIENCE</h3></a>
+    <div class="nav-item" (click)="toggleMenu()">
+      <a href="#experience"><h3>EXPERIENCE</h3></a>
     </div>
-    <div class="nav-item">
-      <a href="#"><h3>ALGORITHMS</h3></a>
+    <div class="nav-item" (click)="toggleMenu()">
+      <a href="#algorithms"><h3>ALGORITHMS</h3></a>
     </div>
   </div>
 </div>
@@ -95,13 +95,14 @@
 <div [@formModal]="formState" class="modal">
   <div class="modal-content">
     <form [@playSubmit]="submit" *ngIf="formState == 'active'" class="form" name="contactForm" #contactForm="ngForm"  method="post">
-      <input type="text" required minlength="4" maxlength="24" name="firstName" [(ngModel)]="firstName"  placeholder="{{firstName}}">
-      <input type="text" required minlength="4" maxlength="24" name="lastName" [(ngModel)]="lastName" placeholder="Last Name">
-      <input type="text" required minlength="4" maxlength="24" name="phone" [(ngModel)]="phone" placeholder="Phone">
-      <input type="email" required minlength="4" maxlength="24" name="email" [(ngModel)]="email" placeholder="Email">
-      <input type="text" required minlength="4" maxlength="24" name="message" [(ngModel)]="message" placeholder="Message">
+      <input type="text"name="firstName" [(ngModel)]="firstName" placeholder="{{firstName}}" required minlength="4" maxlength="24">
+      <div *ngIf="lastName.length < 4 && contactForm.form.dirty" class="errors">Last Name Field Required{{lastName.length}}</div>
+      <input type="text"[(ngModel)]="lastName" name="lastName" placeholder="Last Name" required minlength="4" maxlength="24" >
+      <input type="text"name="phone" [(ngModel)]="phone" placeholder="Phone" required minlength="4" maxlength="24" >
+      <input type="email"name="email" [(ngModel)]="email" placeholder="Email" required minlength="4" maxlength="24" >
+      <input type="text"name="message" [(ngModel)]="message" placeholder="Message" required minlength="4" maxlength="24" >
       <input type="submit" *ngIf="contactForm.form.valid" value="Fire!" class="submit" [disabled]="!contactForm.form.valid" (click)="toggleSubmit()">
-    </form> 
+    </form>
     <i [@thumbUp]="thumbState"class="fa fa-thumbs-o-up fa-5x" aria-hidden="true"></i>
   </div>
 </div>

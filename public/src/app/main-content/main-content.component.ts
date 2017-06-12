@@ -1,5 +1,6 @@
 import { Component,  OnInit, trigger, state, style, transition, animate, HostListener, keyframes } from '@angular/core';
 import { IntroService } from '../intro/intro.service';
+import { Form } from './form'
 
 @Component({
   selector: 'app-main-content',
@@ -85,8 +86,6 @@ import { IntroService } from '../intro/intro.service';
        transform: "translateX(0)",
      })),
      state('active', style({
-      //  transform: "translateX(-500%)"
-      zIndex: "9500",
       position: "fixed",
       left: "10vw",
       top: "5vh",
@@ -120,11 +119,24 @@ import { IntroService } from '../intro/intro.service';
      })),
      transition('inactive <=> active', [
       animate(300, keyframes([
-        style({opacity: 1, transform: 'scale(.75)', offset: 0.7}),
-        style({opacity: 1, transform: 'scale(1.2)',  offset: 1.0})
+        style({transform: 'scale(.75)', offset: 0.7}),
+        style({transform: 'scale(1.2)',  offset: 1.0})
       ])),
     ])
-  ])
+  ]),
+  trigger('mobileMenu', [
+    state('inactive', style({
+    })),
+    state('active', style({
+    })),
+    transition('inactive <=> active', [
+     animate(1000, keyframes([
+       style({ transform: 'rotate(720deg)', offset: 0.1}),
+       style({ transform: 'scale(1.2)',  offset: 0.7}),
+       style({ transform: 'scale(1)',  offset: 1.0})
+     ])),
+   ])
+ ])
 ]
 })
 export class MainContentComponent implements OnInit {
@@ -138,30 +150,49 @@ export class MainContentComponent implements OnInit {
   submit = 'active';
   menu: any;
   loadLowerComponent: string;
+  browser: string;
+  menuText = "Menu";
 
   //form inputs
   firstName: string;
-  lastName: string;
-  email: string;
-  phone: string;
-  message: string;
+  lastName: string = "";
+  email: string = "";
+  phone: string = "";
+  message: string = "";
+
 
   constructor(private introService: IntroService) { }
 
   ngOnInit() {
     this.menu = document.getElementsByClassName('menu');
+    if (navigator.userAgent.indexOf("Firefox") != -1){
+      this.browser = "ff";
+      let contactDiv = document.getElementsByClassName("ff")
+      let contactForm = document.getElementsByClassName("ffcf")
+      let item = document.getElementsByClassName("item")
+      contactDiv[0].classList.remove("contact-div")
+      contactDiv[0].classList.add("contact-div-ff")
+      contactForm[0].classList.remove("contact-form")
+      contactForm[0].classList.add("contact-form-ff")
+      for (let i = 0; i < item.length; i++){
+        item[i].classList.add("item-ff")
+      }
+    }
   }
 
   @HostListener('window:scroll', ['$event'])
   track(event) {
 
-    let scrollHeight = event.path[1].scrollY;
-    if (scrollHeight > this.menu[0].offsetHeight){
-      this.stickyState = 'active';
-      this.loadLowerComponent = "true";
-    }
-    else {
-      this.stickyState = 'inactive';
+    if(this.browser != "ff"){
+      let scrollHeight = event.path[1].scrollY;
+      console.log(event)
+      if (scrollHeight > this.menu[0].offsetHeight){
+        this.stickyState = 'active';
+        this.loadLowerComponent = "true";
+      }
+      else {
+        this.stickyState = 'inactive';
+      }
     }
 
   }
@@ -179,6 +210,7 @@ export class MainContentComponent implements OnInit {
 
   toggleMenu(){
     this.menuState = this.menuState == "inactive" ? "active" : "inactive";
+    this.menuText = this.menuText == "Menu" ? "Close" : "Menu";
   }
 
   toggleForm(){
@@ -203,7 +235,7 @@ export class MainContentComponent implements OnInit {
     this.submit = "void";
     setTimeout(()=>{
       this.thumbState = "active";
-      setTimeout(()=>{this.toggleForm()},3000);
+      setTimeout(()=>{this.toggleForm(); this.clearForm()},3000);
   },1000)
   }
 }
