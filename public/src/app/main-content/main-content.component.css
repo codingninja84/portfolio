@@ -70,7 +70,7 @@ input {
   height: auto;
   width: auto;
   color: #fff;
-  z-index: 9999;
+  z-index: 9000;
   padding: 1.8rem;
   font-family: delicious;
 }
@@ -202,7 +202,7 @@ input {
   color: #272f38;
   box-shadow: 0 0 5rem #000;
   position: absolute;
-  z-index: 9500;
+  z-index: 9000;
 }
 
 .form input {
@@ -331,7 +331,6 @@ input {
 }
 
 .bio {
-  width: 60%;
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -379,6 +378,7 @@ input {
   align-items: center;
   flex-direction: column;
   text-align: center;
+  margin: 1%;
 }
 
 .pf-slider {
@@ -496,8 +496,25 @@ input {
     flex-direction: column;
   }
 
+  .about-me {
+    width: 50%;
+  }
+
+  .bio {
+    width: 95%;
+    text-align: center;
+    margin-bottom: 1%;
+  }
+
+  .full-width-component {
+    flex-direction: column;
+  }
+
   .column {
+    position: relative;
     width: 100%;
+    margin: 2%;
+    background-color: #F58B79;
   }
 
   .black {
@@ -555,6 +572,23 @@ input {
     flex-direction: column;
   }
 
+  .about-me {
+    width: 50%;
+  }
+
+  .bio {
+    width: 95%;
+  }
+
+  .full-width-component {
+    flex-direction: column;
+  }
+
+  .column {
+    width: 100%;
+    margin: 1%;
+  }
+
   .black {
     height: 80vh;
     flex-direction: column;
@@ -598,6 +632,14 @@ input {
 
   .content {
     flex-direction: row;
+  }
+
+  .full-width-component {
+    flex-direction: row;
+  }
+
+  .bio {
+    width: 50%;
   }
 
   .toggleSidebar {

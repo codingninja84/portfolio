@@ -15,8 +15,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 25vw;
-  width: 25vw;
   background-color: transparent;
   border: 1px solid #333;
   border-radius: 50%;
@@ -130,4 +128,81 @@ right: 0%;
 height: 100%;
 width: 75%;
 background-color: #1e1e1e;
+}
+
+@media only screen and (max-width: 370px){
+  .count {
+  font-size: 3rem;
+  }
+
+  h3 {
+    font-size: 1.3rem;
+  }
+
+  .enter {
+    height: 60vw;
+    width: 60vw;
+  }
+
+
+}
+
+@media only screen and (min-width: 371px){
+  .count {
+  font-size: 4rem;
+  }
+
+  h3 {
+    font-size: 1.5rem;
+  }
+
+  .enter {
+    height: 60vw;
+    width: 60vw;
+  }
+}
+@media only screen and (min-width: 500px){
+  .count {
+  font-size: 5rem;
+  }
+
+  h3 {
+    font-size: 1.7rem;
+  }
+
+  .enter {
+    height: 35vw;
+    width: 35vw;
+  }
+}
+
+@media only screen and (min-width: 600px){
+
+  h3 {
+    font-size: 1.8rem;
+  }
+  .count {
+  font-size: 7rem;
+  }
+
+  .enter {
+    height: 30vw;
+    width: 30vw;
+  }
+}
+@media only screen and (min-width: 900px){
+
+  h3 {
+    font-size: 2.5rem;
+  }
+
+  .count {
+  font-size: 10rem;
+  }
+
+  .enter {
+    height: 25vw;
+    width: 25vw;
+  }
+
 }
