@@ -36,19 +36,19 @@ import { IntroService} from './intro.service'
      transition('high => low', group([
        animate("1s"),
        animate('.25s ease-in-out', style({boxShadow: ".2rem .3 .7rem rgba(0, 255, 0, .5)"}),),
-       animate('.25s ease-in-out', style({boxShadow: ".2rem .3 .7rem rgba(255, 0, 0, .5)"}),)
+      //  animate('.25s ease-in-out', style({boxShadow: ".2rem .3 .7rem rgba(255, 0, 0, .5)"}),)
    ])),
       transition('low => high', group([
         animate('.25s ease-in-out', style({boxShadow: ".2rem .3 .7rem rgba(0, 255, 0, .5)"}),),
-        animate('.25s ease-in-out', style({boxShadow: ".2rem .3 .7rem rgba(255, 0, 0, .5)"}),)
+        // animate('.25s ease-in-out', style({boxShadow: ".2rem .3 .7rem rgba(255, 0, 0, .5)"}),)
     ])),
      transition('top => bottom',  group([
-       animate('.25s ease-in-out', style({boxShadow: "-.2rem .3 .7rem rgba(0, 255, 0, .5)"}),),
+      //  animate('.25s ease-in-out', style({boxShadow: "-.2rem .3 .7rem rgba(0, 255, 0, .5)"}),),
        animate('.25s ease-in-out', style({boxShadow: "-.2rem -.3 .7rem rgba(255, 0, 0, .5)"}),)
    ])),
      transition('bottom => top',  group([
        animate('.25s ease-in-out', style({boxShadow: "-.2rem -.3 .7rem rgba(255, 255, 0, .5)"}),),
-       animate('.25s ease-in-out', style({boxShadow: ".2rem .3 .7rem rgba(255, 0, 0, .5)"}),)
+      //  animate('.25s ease-in-out', style({boxShadow: ".2rem .3 .7rem rgba(255, 0, 0, .5)"}),)
    ])),
    ]),
 trigger('background', [
