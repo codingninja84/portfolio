@@ -186,7 +186,6 @@ export class MainContentComponent implements OnInit {
 
     if(this.browser != "ff"){
       let scrollHeight = event.path[1].scrollY;
-      console.log(event)
       if (scrollHeight > this.menu[0].offsetHeight){
         this.stickyState = 'active';
         this.loadLowerComponent = "true";
@@ -216,7 +215,6 @@ export class MainContentComponent implements OnInit {
 
   toggleForm(){
     this.formState = this.formState == "inactive" ? "active" : "inactive";
-    console.log(this.formState)
   }
 
   toggleTriangle(){
