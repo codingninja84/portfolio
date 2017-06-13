@@ -32,10 +32,9 @@ import { IntroService} from './intro.service'
      })),
      state('bottom', style({
        boxShadow: "-.2rem .5rem 1rem rgba(0, 255, 255, .5)",
-
      })),
-     animate("1s"),
      transition('high => low', group([
+       animate("1s"),
        animate('.25s ease-in-out', style({boxShadow: ".2rem .3 .7rem rgba(0, 255, 0, .5)"}),),
        animate('.25s ease-in-out', style({boxShadow: ".2rem .3 .7rem rgba(255, 0, 0, .5)"}),)
    ])),
