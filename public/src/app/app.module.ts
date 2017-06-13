@@ -15,6 +15,7 @@ import { LanguagesComponent } from './main-content/languages/languages.component
 import { IntroService } from './intro/intro.service';
 import { FooterComponent } from './main-content/footer/footer.component';
 import { IconsComponent } from './main-content/languages/icons/icons.component'
+import { AppRoutingModule } from './routes'
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { IconsComponent } from './main-content/languages/icons/icons.component'
     BrowserModule,
     FormsModule,
     HttpModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    AppRoutingModule
   ],
   providers: [WindowRef, IntroService],
   bootstrap: [AppComponent]

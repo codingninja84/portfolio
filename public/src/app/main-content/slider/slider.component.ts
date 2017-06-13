@@ -21,9 +21,21 @@ import { Component,  OnInit, trigger, state, style, transition, animate } from '
      transition('inactive => active', animate('1000ms 400ms ease-in-out')),
      transition('active => inactive', animate('400ms ease-in-out'))
    ]),
+     trigger('projInfo', [
+      state('active', style({
+        display: "flex"
+      })),
+      state('inactive', style({
+        display: "none"
+      })),
+      transition('inactive => active', animate('1000ms 400ms ease-in-out')),
+      transition('active => inactive', animate('400ms ease-in-out'))
+    ]),
  ]
 })
 export class SliderComponent implements OnInit {
+
+  projStatus: string = 'inactive';
 
   constructor() { }
 
@@ -35,5 +47,10 @@ export class SliderComponent implements OnInit {
       }
       }
     }
+
+  toggleProjInfo(column) {
+    this.projStatus = this.projStatus == "inactive" ? "active" : "inactive";
+    console.log(column, this.projStatus)
+  }
 
   }

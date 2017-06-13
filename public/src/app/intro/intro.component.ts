@@ -1,4 +1,4 @@
-import { Component,  OnInit, trigger, state, style, transition, animate, keyframes, group, Input } from '@angular/core';
+import { Component,  OnInit, trigger, state, style, transition, animate, keyframes, group, Input, ViewChild, ElementRef } from '@angular/core';
 import { WindowRef} from './../windowRef'
 import { IntroService} from './intro.service'
 
@@ -130,19 +130,21 @@ export class IntroComponent implements OnInit {
   welcome: any;
 
   constructor(private winRef: WindowRef, private introService: IntroService ) { }
-
+  @ViewChild('enterDiv') enterDiv: ElementRef
   ngOnInit(){
     this.build = this.winRef.document.getElementById("build");
     this.bass = this.winRef.document.getElementById("bass");
     this.ambient = this.winRef.document.getElementById("ambient");
     this.welcome = this.winRef.document.getElementById("welcome");
+  }
+
+  ngAfterViewInit() {
     let interval = setInterval(()=>{
       let output = this.dance()
       if (output == false){
         clearInterval(interval)
       }
     },1000)
-
   }
 
   count(num){

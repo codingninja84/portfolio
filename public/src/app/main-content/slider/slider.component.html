@@ -1,15 +1,22 @@
 <div class="container">
   <div class="row">
-    <div class="column">
-      <div class="title"><h3>KLINEFELTER</h3></div>
-    </div>
-    <div class="column">
-      <div class="title"><h3>SARDA</h3></div>
-    </div>
-    <div class="column">
-      <div class="title"><h3>DOJSTAGRAM</h3></div>
+      <div (mouseenter)="toggleProjInfo(this.column)" (mouseleave)="toggleProjInfo(column)" class="column">
+        <div class="title">
+          <h3>KLINEFELTER</h3>
+        </div>
+      </div>
+    <div (mouseenter)="toggleProjInfo(column)" (mouseleave)="toggleProjInfo(column)" class="column">
+        <div class="title">
+          <h3>SARDA</h3>
+        </div>
+      </div>
+    <div (mouseenter)="toggleProjInfo(column)" (mouseleave)="toggleProjInfo(column)" class="column">
+        <div class="title">
+          <h3>DOJSTAGRAM</h3>
+        </div>
     </div>
   </div>
+  <div [@projInfo]="projStatus" class="project-info"></div>
   <div class="row-top">
     <h2>
       <span class="before-block">RECENT</span><span class="blocks">projects</span>

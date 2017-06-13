@@ -1,5 +1,5 @@
 <div [@color]="breakState" class="intro">
-  <div class="enter"[@introToggle]="enterState" [@intro]="colorStateLeft" [@intro]="colorStateRight"(click)="toggleEnter()"><h3>Click to enter</h3></div>
+  <div #enterDiv class="enter" [@introToggle]="enterState" [@intro]="colorStateLeft" [@intro]="colorStateRight"(click)="toggleEnter()"><h3>Click to enter</h3></div>
 </div>
 <div [@background]="backgroundState" class="count" [ngSwitch]="skill">
   <div class="skillContainer" *ngSwitchDefault><div><p class="bracket">{{'{'}}</p></div>{{skill}}<div><p class="bracket">{{'}'}}</p></div></div>
@@ -8,7 +8,7 @@
     <div [@largeBars]="barState" class="largeBars"></div>
     <div [@smallBars]="barState" class="smallBars"></div>
     <div [@largeBars]="barState" class="largeBars"></div>
-    <img src="/assets/logo.png">
+    <img class="logo" src="/assets/logo.png">
     <div class="spinner"></div>
   </div>
 </div>

@@ -180,6 +180,7 @@ export class MainContentComponent implements OnInit {
     }
   }
 
+
   @HostListener('window:scroll', ['$event'])
   track(event) {
 

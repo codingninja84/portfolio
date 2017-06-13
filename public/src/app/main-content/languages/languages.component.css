@@ -166,6 +166,10 @@ h1, h2 {
     align-items: center;
   }
 
+  .triangle-down {
+    bottom: -1rem;
+  }
+
   .content {
     width: 45vw;
     text-align: left;
@@ -216,10 +220,14 @@ h1, h2 {
   }
 
   .inner-slide:last-child {
-    padding: 15% 10%;
+    padding: 5%;
     flex-direction: row;
     justify-content: flex-start;
     align-items: flex-start;
+  }
+
+  .triangle-down {
+    bottom: -1rem;
   }
 
   .content {
@@ -283,6 +291,7 @@ h1, h2 {
     width: 25vw;
     text-align: left;
   }
+
   .triangle-down {
     border-top: 1.2rem solid #0b76db;
     border-right: 1.2rem solid transparent;
