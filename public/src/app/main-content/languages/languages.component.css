@@ -56,6 +56,10 @@ h1, h2 {
   position: relative;
 }
 
+.box:hover {
+  cursor: pointer;
+}
+
 .box > * {
   margin: 0 1%;
 }
