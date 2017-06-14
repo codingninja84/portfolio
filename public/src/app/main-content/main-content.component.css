@@ -536,11 +536,9 @@ input {
   .download-resume {
     width: 30vw;
     height: 30vw;
+
   }
 
-  .resume-font h3 {
-    font-size: .75rem;
-  }
 
   .resume-font h3 {
     font-size: .9rem;
@@ -625,9 +623,6 @@ input {
     font-size: .8rem;
   }
 
-  .resume-font h3 {
-    font-size: 1rem;
-  }
 
   .arrow.left {
     display: none;
@@ -733,7 +728,7 @@ input {
   }
 
   .resume-font h3 {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
   }
 
   .arrow.left {
