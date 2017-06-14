@@ -98,6 +98,9 @@ img {
 
 @media only screen and (max-width: 370px){
 
+  .before-block {
+    font-size: 1.4rem;
+  }
 
   .row {
     height: 70%;
@@ -116,6 +119,10 @@ img {
 
   .row {
     height: 70%;
+  }
+
+  .before-block {
+    font-size: 1.75rem;
   }
 
 }
