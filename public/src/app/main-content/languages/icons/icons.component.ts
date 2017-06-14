@@ -418,8 +418,7 @@ export class IconsComponent implements OnInit {
 
   moveIcons(){
     this.position = this.position == "start" ? "void" : "start";
-    console.log("test")
-    setTimeout(()=>{this.moveIcons()},6500);
+    setTimeout(()=>{this.moveIcons()},6999);
   }
 
 }
