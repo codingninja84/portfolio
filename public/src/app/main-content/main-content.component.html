@@ -80,45 +80,44 @@
     </div>
   </div>
   <app-footer *ngIf="loadLowerComponent == 'true' || browser == 'ff'"></app-footer>
-</div>
-
-<div [@menuModal]="menuState" class="modal">
-  <div *ngIf="menuState == 'active'" class="modal-content">
-    <div class="nav-item" (click)="toggleMenu()">
-      <a href="#about"><h3>ABOUT</h3></a>
-    </div>
-    <div class="nav-item" (click)="toggleMenu()">
-      <a href="#langauges"><h3>LANGUAGES</h3></a>
-    </div>
-    <div class="nav-item" (click)="toggleMenu()">
-      <a href="#projects"><h3>PROJECTS</h3></a>
-    </div>
-    <div class="nav-item" (click)="toggleMenu()">
-      <a href="#experience"><h3>EXPERIENCE</h3></a>
-    </div>
-    <div class="nav-item" (click)="toggleMenu()">
-      <a href="#algorithms"><h3>ALGORITHMS</h3></a>
+  <div [@menuModal]="menuState" class="modal">
+    <div *ngIf="menuState == 'active'" class="modal-content">
+      <div class="nav-item" (click)="toggleMenu()">
+        <a href="#about"><h3>ABOUT</h3></a>
+      </div>
+      <div class="nav-item" (click)="toggleMenu()">
+        <a href="#langauges"><h3>LANGUAGES</h3></a>
+      </div>
+      <div class="nav-item" (click)="toggleMenu()">
+        <a href="#projects"><h3>PROJECTS</h3></a>
+      </div>
+      <div class="nav-item" (click)="toggleMenu()">
+        <a href="#experience"><h3>EXPERIENCE</h3></a>
+      </div>
+      <div class="nav-item" (click)="toggleMenu()">
+        <a href="#algorithms"><h3>ALGORITHMS</h3></a>
+      </div>
     </div>
   </div>
-</div>
 
-<div [@formModal]="formState" class="modal">
-  <div class="modal-content">
-    <form [@playSubmit]="submit" *ngIf="formState == 'active'" class="form" name="contactForm" #contactForm="ngForm"  method="post">
-      <input type="text"name="firstName" [(ngModel)]="firstName" placeholder="{{firstName}}" required minlength="4" maxlength="24">
-      <div *ngIf="lastName.length < 4 && contactForm.form.dirty" class="errors">Last Name Field Required{{lastName.length}}</div>
-      <input type="text"[(ngModel)]="lastName" name="lastName" placeholder="Last Name" required minlength="4" maxlength="24" >
-      <input type="text"name="phone" [(ngModel)]="phone" placeholder="Phone" required minlength="4" maxlength="24" >
-      <input type="email"name="email" [(ngModel)]="email" placeholder="Email" required minlength="4" maxlength="24" >
-      <input type="text"name="message" [(ngModel)]="message" placeholder="Message" required minlength="4" maxlength="24" >
-      <input type="submit" *ngIf="contactForm.form.valid" value="Fire!" class="submit" [disabled]="!contactForm.form.valid" (click)="toggleSubmit()">
-    </form>
-    <i [@thumbUp]="thumbState"class="fa fa-thumbs-o-up fa-5x" aria-hidden="true"></i>
+  <div [@formModal]="formState" class="modal">
+    <div class="modal-content">
+      <form [@playSubmit]="submit" *ngIf="formState == 'active'" class="form" name="contactForm" #contactForm="ngForm"  method="post">
+        <input type="text"name="firstName" [(ngModel)]="firstName" placeholder="{{firstName}}" required minlength="4" maxlength="24">
+        <div *ngIf="lastName.length < 4 && contactForm.form.dirty" class="errors">Last Name Field Required{{lastName.length}}</div>
+        <input type="text"[(ngModel)]="lastName" name="lastName" placeholder="Last Name" required minlength="4" maxlength="24" >
+        <input type="text"name="phone" [(ngModel)]="phone" placeholder="Phone" required minlength="4" maxlength="24" >
+        <input type="email"name="email" [(ngModel)]="email" placeholder="Email" required minlength="4" maxlength="24" >
+        <input type="text"name="message" [(ngModel)]="message" placeholder="Message" required minlength="4" maxlength="24" >
+        <input type="submit" *ngIf="contactForm.form.valid" value="Fire!" class="submit" [disabled]="!contactForm.form.valid" (click)="toggleSubmit()">
+      </form>
+      <i [@thumbUp]="thumbState"class="fa fa-thumbs-o-up fa-5x" aria-hidden="true"></i>
+    </div>
   </div>
-</div>
 
-<div [@contactModal]="contactState" class="sidebar-modal">
-  <div class="modal-content contact-content">
-    <app-sidebar></app-sidebar>
+  <div [@contactModal]="contactState" class="sidebar-modal">
+    <div class="modal-content contact-content">
+      <app-sidebar></app-sidebar>
+    </div>
   </div>
 </div>
