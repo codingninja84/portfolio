@@ -40,12 +40,13 @@ export class SliderComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    if (navigator.userAgent.indexOf("Firefox") != -1) {
+    if (navigator.userAgent.indexOf("Firefox") == -1) {
       let column = document.getElementsByClassName("column");
       for (let i = 0; i < column.length; i++) {
           column[i].classList.add("column-ff");
       }
-      }
+    }
+      console.log(navigator.userAgent)
     }
 
   toggleProjInfo(column) {

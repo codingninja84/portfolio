@@ -138,6 +138,7 @@ export class IntroComponent implements OnInit {
   }
 
   ngAfterViewInit() {
+    console.log("testInit")
     let interval = setInterval(()=>{
       let output = this.dance()
       if (output == false){

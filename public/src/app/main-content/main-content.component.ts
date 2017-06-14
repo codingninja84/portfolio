@@ -180,6 +180,10 @@ export class MainContentComponent implements OnInit {
     }
   }
 
+  ngAfterViewInit(){
+    this.loadLowerComponent = "true";
+  }
+
 
   @HostListener('window:scroll', ['$event'])
   track(event) {
@@ -188,7 +192,6 @@ export class MainContentComponent implements OnInit {
       let scrollHeight = event.path[1].scrollY;
       if (scrollHeight > this.menu[0].offsetHeight){
         this.stickyState = 'active';
-        this.loadLowerComponent = "true";
       }
       else {
         this.stickyState = 'inactive';
