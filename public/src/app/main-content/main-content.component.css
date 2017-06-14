@@ -39,6 +39,7 @@ input {
 
 .full-width-component {
   width: 100%;
+  height: auto;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -123,7 +124,7 @@ input {
 .contact-div {
   position: relative;
   background-color: rgba(39,47,56,.7);
-  height: 50vh;
+  height: 30vw;
   width: 40%;
   overflow: hidden;
   -webkit-clip-path: polygon(100% 0, 0 21%, 85% 100%);
@@ -484,7 +485,8 @@ input {
   }
 
   .contact-div {
-    width: 80%;
+    width: 95%;
+    height: 100vw;
   }
 
   .menu {
@@ -538,7 +540,9 @@ input {
     height: 30vw;
 
   }
-
+  .resume-font h1 {
+    font-size: 1.5rem;
+  }
 
   .resume-font h3 {
     font-size: .9rem;
@@ -554,11 +558,9 @@ input {
 }
 
 @media only screen and (min-width: 371px){
-  .headline {
-    min-height: 650px;
-  }
 
   .header-content {
+    min-height: 600px;
     height: 100%;
     width: 100%;
   }
@@ -572,7 +574,8 @@ input {
   }
 
   .contact-div {
-    width: 80%;
+    width: 90%;
+    height: 90vw;
   }
 
   .contact-form {
@@ -619,8 +622,12 @@ input {
     height: 30vw;
   }
 
+  .resume-font h1 {
+    font-size: 1.5rem;
+  }
+
   .resume-font h3 {
-    font-size: .8rem;
+    font-size: 1.2rem;
   }
 
 
@@ -635,19 +642,16 @@ input {
 
   }
 
-  .headline {
-    min-height: 700px;
-  }
 
   .header-content {
     height: 100%;
     width: 100%;
+    min-height: 700px;
   }
 
   .headline {
     width: 75%;
     margin: 2rem 0 1.5rem 0;
-
   }
 
   .tagLine, .title {
@@ -695,8 +699,8 @@ input {
   }
 
   .contact-div {
-    height: 50vh;
-    width: 48%;
+    height: 45%;
+    width: 75%;
   }
 
   .contact-form {
@@ -727,8 +731,12 @@ input {
     height: 30vw;
   }
 
+  .resume-font h1 {
+    font-size: 1.7rem;
+  }
+
   .resume-font h3 {
-    font-size: 1.2rem;
+    font-size: 1.4rem;
   }
 
   .arrow.left {
@@ -741,8 +749,12 @@ input {
     display: none;
   }
 
+  .header {
+    height: 100vh;
+    min-height: 700px;
+  }
+
   .header-content {
-    height: 75vh;
     flex-direction: row;
   }
 
@@ -815,8 +827,8 @@ input {
     background-position: left bottom;
     transition: background-position 800ms;
     position: absolute;
-    right: 0;
-    left: 0;
+    right: auto;
+    left: auto;
     top: 0;
     bottom: 0;
     z-index: -55;
