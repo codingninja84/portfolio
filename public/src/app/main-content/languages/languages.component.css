@@ -39,9 +39,8 @@ h1, h2 {
   align-items: center;
   flex-direction: row;
   width: 100%;
-  height: auto;
-  min-height: 30%;
-  flex-basis: 1;
+  height: 30%;
+  overflow: visible;
 }
 
 .box {
@@ -445,8 +444,8 @@ h1, h2 {
     border-right: 1.2rem solid transparent;
     border-left: 1.2rem solid transparent;
     bottom: -1rem;
-      right: auto;
-      left: auto;
+    right: 30%;
+    left: 30%;
   }
 
 
@@ -509,8 +508,8 @@ h1, h2 {
   }
 
   .triangle-down {
-    right: auto;
-    left: auto;
+    right: 33%;
+    left: 33%;
   }
 
 }
