@@ -214,7 +214,7 @@ input {
   margin: .5rem;
 }
 
-.form input:nth-child(5) {
+.form input:nth-child(6) {
   height: 8rem;
   overflow: hidden;
 }
@@ -255,6 +255,10 @@ input {
 
 .form {
   box-shadow: none;
+}
+
+.errors {
+  color: red;
 }
 
 .modal-content i {
@@ -763,6 +767,7 @@ input {
   }
 
   .header-content {
+    height: 85%;
     flex-direction: row;
   }
 

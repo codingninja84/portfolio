@@ -94,18 +94,15 @@ align-items: center;
 .largeBars {
 border-radius: 8px;
 transform: rotate(90deg);
-width: 1.5rem;
 height: 35%;
-background-color: #338F9A;
-margin: 1rem;
+background-color: #3CC0CF;
 }
 
 .smallBars {
 border-radius: 8px;
 transform: rotate(90deg);
-width: 1.5rem;
 height: 25%;
-background-color: #338F9A;
+background-color: #3CC0CF;
 margin: 1rem;
 }
 
@@ -160,12 +157,12 @@ background-color: #1e1e1e;
   }
 
   .largeBars {
-  width: 2rem;;
+  width: 1.25rem;
   height: 30%;
   }
 
   .smallBars {
-  width: 2rem;;
+  width: 1.25rem;
   height: 20%;
   }
 
@@ -196,16 +193,16 @@ background-color: #1e1e1e;
   }
 
   .barContainer {
-    width: 40%;
+    width: 90%;
   }
 
   .largeBars {
-  width: 2rem;
+  width: 1.25rem;
   height: 30%;
   }
 
   .smallBars {
-  width: 2rem;
+  width: 1.25rem;
   height: 20%;
   }
 }
@@ -233,17 +230,17 @@ background-color: #1e1e1e;
   }
 
   .barContainer {
-    width: 70%;
+    width: 90%;
   }
 
   .largeBars {
-  width: 2rem;
-  height: 35%;
+  width: 1.25rem;
+  height: 30%;
   }
 
   .smallBars {
-  width: 2rem;
-  height: 25%;
+  width: 1.25rem;
+  height: 20%;
   }
 }
 
