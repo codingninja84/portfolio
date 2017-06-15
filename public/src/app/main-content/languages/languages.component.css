@@ -74,7 +74,8 @@ h1, h2 {
 
 .triangle-down {
   position: absolute;
-  left: 35%;
+  left: 0px;
+  right: 0px;
   bottom: -1.2rem;
   border-top: 1rem solid #0b76db;
   border-right: 1rem solid transparent;
@@ -356,7 +357,7 @@ h1, h2 {
 
   .list-item i {
     font-size: 1.5rem;
-    margin-right: 1%;
+    margin-right: 5px;
   }
 
 
@@ -413,7 +414,7 @@ h1, h2 {
 
   .list-item i {
     font-size: 1.2rem;
-    margin-right: 1%;
+    margin-right: 5px;
   }
 
   .box > * {
@@ -488,7 +489,7 @@ h1, h2 {
 
   .list-item i {
     font-size: 1.5rem;
-    margin-right: 1%;
+    margin-right: 5px;
   }
 
 }
