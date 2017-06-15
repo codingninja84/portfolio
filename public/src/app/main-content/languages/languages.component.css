@@ -45,7 +45,8 @@ h1, h2 {
 
 .box {
   width: 23%;
-  height: 50%;
+  height: auto;
+  min-height: 50%;
   margin: 1%;
   border: 1px solid #0b76db;
   text-align: center;
@@ -57,6 +58,7 @@ h1, h2 {
   flex-shrink: 3;
   position: relative;
   max-height: 60px;
+  overflow: visible;
 }
 
 .box:hover {
@@ -444,8 +446,8 @@ h1, h2 {
     border-right: 1.2rem solid transparent;
     border-left: 1.2rem solid transparent;
     bottom: -1rem;
-      right: 33%;
-      left: 33%;
+      right: auto;
+      left: auto;
   }
 
 
@@ -508,8 +510,8 @@ h1, h2 {
   }
 
   .triangle-down {
-    right: 38%;
-    left: 38%;
+    right: auto;
+    left: auto;
   }
 
 }
