@@ -46,12 +46,12 @@ export class SliderComponent implements OnInit {
           column[i].classList.add("column-ff");
       }
     }
-      console.log(navigator.userAgent)
+      
     }
 
   toggleProjInfo(column) {
     this.projStatus = this.projStatus == "inactive" ? "active" : "inactive";
-    console.log(column, this.projStatus)
+
   }
 
   }
