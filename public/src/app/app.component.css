@@ -1,5 +1,9 @@
 .pf-container {
   display: flex;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  max-width: 100vw;
 }
 
 
@@ -19,17 +23,6 @@ app-main-component {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    width: 100vw;
   }
-
-}
-
-@media only screen and (min-width: 901px) {
-
-    .pf-container {
-      height: 100vh;
-      width: 100vw;
-    }
 
 }
