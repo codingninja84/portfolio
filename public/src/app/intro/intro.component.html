@@ -1,7 +1,7 @@
 <div *ngIf="introState != 'false'" [@color]="breakState" class="intro">
   <div #enterDiv class="enter" [@introToggle]="enterState" [@intro]="colorStateLeft" [@intro]="colorStateRight"(click)="toggleEnter()"><h3>Click to enter</h3></div>
 </div>
-<div [@background]="backgroundState" class="count" [ngSwitch]="skill">
+<div *ngIf="introState != 'false'" [@background]="backgroundState" class="count" [ngSwitch]="skill">
   <div class="skillContainer" *ngSwitchDefault><div><p class="bracket">{{'{'}}</p></div>{{skill}}<div><p class="bracket">{{'}'}}</p></div></div>
   <div class="barContainer" *ngSwitchCase="true">
     <div [@smallBars]="barState" class="smallBars"></div>
@@ -12,17 +12,17 @@
     <div class="spinner"></div>
   </div>
 </div>
-<div [@breakTop]="break" class="breakTop"></div>
-<div [@breakBottom]="break" class="breakBottom"></div>
-<audio id="bass">
+<div *ngIf="introState != 'false'" [@breakTop]="break" class="breakTop"></div>
+<div *ngIf="introState != 'false'" [@breakBottom]="break" class="breakBottom"></div>
+<audio*ngIf="introState != 'false'" id="bass">
   <source src="../assets/bassDrop.wav" type="audio/wav">
 </audio>
-<audio id="build">
+<audio *ngIf="introState != 'false'" id="build">
   <source src="../assets/build.wav" type="audio/wav">
 </audio>
-<audio id="ambient">
+<audio *ngIf="introState != 'false'" id="ambient">
   <source src="../assets/slide.wav" type="audio/wav">
 </audio>
-<audio id="welcome">
+<audio *ngIf="introState != 'false'" id="welcome">
   <source src="../assets/welcome.wav" type="audio/wav">
 </audio>
