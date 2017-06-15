@@ -50,11 +50,11 @@ import 'core-js/es7/reflect';
 
 
 
+import 'web-animations-js/web-animations.min';
 /***************************************************************************************************
  * Zone JS is required by Angular itself.
  */
 import 'zone.js/dist/zone';  // Included with Angular CLI.
-
 
 
 /***************************************************************************************************
