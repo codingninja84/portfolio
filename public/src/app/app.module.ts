@@ -13,6 +13,7 @@ import { WindowRef } from './windowRef';
 import { IntroComponent } from './intro/intro.component';
 import { LanguagesComponent } from './main-content/languages/languages.component'
 import { IntroService } from './intro/intro.service';
+import { FormService } from './form.service'
 import { FooterComponent } from './main-content/footer/footer.component';
 import { IconsComponent } from './main-content/languages/icons/icons.component'
 // import { AppRoutingModule } from './routes'
@@ -35,7 +36,7 @@ import { IconsComponent } from './main-content/languages/icons/icons.component'
     HttpModule,
     BrowserAnimationsModule,
   ],
-  providers: [WindowRef, IntroService],
+  providers: [WindowRef, IntroService, FormService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

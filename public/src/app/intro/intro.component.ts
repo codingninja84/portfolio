@@ -139,7 +139,7 @@ export class IntroComponent implements OnInit {
   }
 
   ngAfterViewInit() {
-    console.log("Welcome! I'm still working out some issues with Safari, but take a look and if you like what you see shoot met an email @ rhanna1461@hotmail.com, or call me @ 253-777-8162")
+    console.log("Welcome! I'm still working out some issues with Safari, but take a look and if you like what you see and you need a developer - shoot me an email @ rhanna1461@hotmail.com, or call me @ 253-777-8162")
     let interval = setInterval(()=>{
       let output = this.dance()
       if (output == false){
