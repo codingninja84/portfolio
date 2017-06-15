@@ -398,6 +398,7 @@ input {
   background-color: black;
   color: #fff;
   padding: auto 10%;
+  min-height: 500px;
 }
 
 .download-resume {

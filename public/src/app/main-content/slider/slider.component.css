@@ -8,6 +8,7 @@
   background-size: cover;
   position: relative;
   height: auto;
+  min-height: 600px;
 }
 
 .row-top {
@@ -167,8 +168,8 @@
   }
 
   .column {
-    height: 25vh;
-    width: 25vh;
+    height: 45vw;
+    width: 45vw;
   }
 }
 
@@ -192,8 +193,8 @@
   }
 
   .column {
-    height: 25vh;
-    width: 25vh;
+    height: 35vw;
+    width: 35vw;
   }
 }
 
