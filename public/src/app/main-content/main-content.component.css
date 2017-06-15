@@ -67,15 +67,15 @@ input {
   align-content: center;
   position: fixed;
   top: 2%;
-  right: 2%;
+  right: 5%;
   height: auto;
   width: auto;
   color: #fff;
   z-index: 9000;
-  padding: 1.8rem;
+  padding: 3%;
   font-family: delicious;
 }
-
+/*test*/
 .mobile-menu:hover {
   cursor: pointer;
 }
@@ -559,8 +559,12 @@ input {
 
 @media only screen and (min-width: 371px){
 
-  .header-content {
+  .header {
     min-height: 600px;
+  }
+
+
+  .header-content {
     height: 100%;
     width: 100%;
   }
@@ -642,11 +646,14 @@ input {
 
   }
 
+  .header {
+    min-height: 700px;
+  }
+
 
   .header-content {
     height: 100%;
     width: 100%;
-    min-height: 700px;
   }
 
   .headline {
