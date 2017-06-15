@@ -840,8 +840,8 @@ input {
     background-position: left bottom;
     transition: background-position 800ms;
     position: absolute;
-    right: 0px;
-    left: 0px;
+    right: auto;
+    left: auto;
     top: 0px;
     bottom: 0px;
     z-index: -55;
