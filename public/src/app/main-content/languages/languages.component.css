@@ -74,7 +74,7 @@ h1, h2 {
 
 .triangle-down {
   position: absolute;
-  right: auto;
+  left: 35%;
   bottom: -1.2rem;
   border-top: 1rem solid #0b76db;
   border-right: 1rem solid transparent;
