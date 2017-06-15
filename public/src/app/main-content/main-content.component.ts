@@ -136,7 +136,18 @@ import { Form } from './form'
        style({ transform: 'scale(1)',  offset: 1.0})
      ])),
    ])
- ])
+ ]),
+ trigger('comingSoon', [
+   state('void', style({
+     opacity: "0",
+     transform: "translateY(100%)"
+   })),
+   state('active', style({
+     opacity: "1",
+     transform: "translateY(-100%)"
+   })),
+   transition('active <=> inactive', animate('1000ms ease-in-out')),
+]),
 ]
 })
 export class MainContentComponent implements OnInit {
@@ -146,13 +157,14 @@ export class MainContentComponent implements OnInit {
   stickyState = 'inactive';
   contactState = 'inactive';
   thumbState = "inactive";
+  comingStatus = "void";
   contact = 'Contact';
   submit = 'active';
   menu: any;
   loadLowerComponent: string;
   browser: string;
   menuText = "Menu";
-
+  comingSoon: string = "Algorithms";
   //form inputs
   firstName: string;
   lastName: string = "";
@@ -184,7 +196,7 @@ export class MainContentComponent implements OnInit {
     this.loadLowerComponent = "true";
   }
 
-  
+
 
   @HostListener('window:scroll', ['$event'])
   track(event) {
@@ -240,5 +252,10 @@ export class MainContentComponent implements OnInit {
       this.thumbState = "active";
       setTimeout(()=>{this.toggleForm(); this.clearForm()},3000);
   },1000)
+  }
+
+  toggleSoonMessage(){
+    this.comingStatus = this.comingStatus == "void" ? "active" : "void";
+    setTimeout(()=>{this.comingStatus = this.comingStatus == "void" ? "active" : "void";},3000)
   }
 }

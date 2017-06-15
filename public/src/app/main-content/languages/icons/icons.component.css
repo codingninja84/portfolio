@@ -8,6 +8,7 @@
   background-color: #272f38;
   position: relative;
   padding: 5%;
+  min-height: 600px;
 }
 
 .column-ff {
