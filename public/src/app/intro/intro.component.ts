@@ -118,6 +118,7 @@ export class IntroComponent implements OnInit {
   enterState = "inactive";
   logoState = "inactive";
   breakState = "active";
+  introState = "true";
   break = "inactive";
   backgroundState = "inactive";
   colorStateLeft = "high";
@@ -206,7 +207,10 @@ export class IntroComponent implements OnInit {
     this.breakState = "inactive";
     this.break = "void";
     this.ambient.play();
-    setTimeout(()=>{this.welcome.play();},2000)
+    setTimeout(()=>{
+      this.welcome.play();
+      setTimeout(()=>{this.introState == 'false'}, 2000)
+    },2000)
   }
 
 }

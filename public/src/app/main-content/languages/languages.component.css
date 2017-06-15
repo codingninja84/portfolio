@@ -72,8 +72,8 @@ h1, h2 {
 
 .triangle-down {
   position: absolute;
-  right: 25%;
-  left: 25%;
+  right: 23%;
+  left: 23%;
   bottom: -1.2rem;
   width: 0;
   height: 0;
@@ -124,6 +124,7 @@ h1, h2 {
   font-size: 2rem;
   color: #0b76db;
   margin-bottom: 0;
+  margin-right: 6px;
 }
 
 @media only screen and (max-width: 370px){
@@ -303,6 +304,8 @@ h1, h2 {
     border-top: 1.2rem solid #0b76db;
     border-right: 1.2rem solid transparent;
     border-left: 1.2rem solid transparent;
+    left: 30%;
+    right: 30%;
   }
 
   .box {
@@ -358,7 +361,7 @@ h1, h2 {
 
   .list-item i {
     font-size: 1.5rem;
-    margin-right: 1%;
+    margin-right: 6px;
   }
 
 
@@ -415,7 +418,7 @@ h1, h2 {
 
   .list-item i {
     font-size: 1.2rem;
-    margin-right: 1%;
+    margin-right: 6px;
   }
 
   .box > * {
@@ -432,6 +435,8 @@ h1, h2 {
     border-right: 1.2rem solid transparent;
     border-left: 1.2rem solid transparent;
     bottom: -1rem;
+    left: 38%;
+    right: 38%;
   }
 
 
@@ -490,7 +495,7 @@ h1, h2 {
 
   .list-item i {
     font-size: 1.5rem;
-    margin-right: 1%;
+    margin-right: 6px;
   }
 
 }
