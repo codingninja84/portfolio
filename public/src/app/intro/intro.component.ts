@@ -209,7 +209,7 @@ export class IntroComponent implements OnInit {
     this.ambient.play();
     setTimeout(()=>{
       this.welcome.play();
-      setTimeout(()=>{this.introState == 'false'}, 2000)
+      setTimeout(()=>{this.introState = 'false'}, 2000)
     },2000)
   }
 
