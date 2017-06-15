@@ -6,7 +6,7 @@
       <a href="#languages"><div class="item">Languages</div></a>
       <a href="#projects"><div class="item">Projects</div></a>
       <a href="#experience"><div class="item">Experience</div></a>
-      <a href="#algorithms"><div class="item">Algorithms</div></a>
+      <a href="#algorithms" (click)="toggleSoonMessage()"><div class="item">Algorithms</div></a>
       <button [@menu]="stickyState" [@contact]="contactState" class="toggleSidebar" (click)="toggleSidebar()">{{contact}}</button>
     </div>
     <div [@mobileMenu]="menuState" (click)="toggleMenu()" class="mobile-menu"><h4>{{menuText}}</h4></div>
@@ -95,7 +95,7 @@
         <a href="#experience"><h3>EXPERIENCE</h3></a>
       </div>
       <div class="nav-item" (click)="toggleMenu()">
-        <a href="#algorithms"><h3>ALGORITHMS</h3></a>
+        <a href="#algorithms" (click)="toggleSoonMessage()"><h3>ALGORITHMS</h3></a>
       </div>
     </div>
   </div>
@@ -119,5 +119,8 @@
     <div class="modal-content contact-content">
       <app-sidebar></app-sidebar>
     </div>
+  </div>
+  <div [@comingSoon]="comingStatus" class="coming-soon">
+    <h3>{{comingSoon}} are coming soon!</h3>
   </div>
 </div>
