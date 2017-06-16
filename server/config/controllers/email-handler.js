@@ -12,8 +12,8 @@ module.exports = (function(){;
           user: 'rhuxdesign@gmail.com',
           pass: 'Freak103!'
         },
-        secure: true,
-      });
+        secure: true
+     });
       let mailOptions = {
         from: '"My Website" <rhuxdesign@gmail.com>',
         to: 'rhanna1461@hotmail.com',
