@@ -13,10 +13,7 @@
     "body-parser": "^1.17.1",
     "express": "^4.15.2",
     "mongoose": "^4.9.5",
-<<<<<<< HEAD
-    "web-animations-js": "^2.2.5"
-=======
+    "web-animations-js": "^2.2.5",
     "nodemailer": "^4.0.1"
->>>>>>> f6b91eea5aa78493b553fb5149598626032c1c83
   }
 }
