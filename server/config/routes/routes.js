@@ -6,4 +6,5 @@ module.exports = function(app) {
     emailHandler.sendEmail(req.body);
     res.json("Email Has been sent via SMTP")
   })
+  
 }
