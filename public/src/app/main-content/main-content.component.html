@@ -86,7 +86,7 @@
         <a href="#about"><h3>ABOUT</h3></a>
       </div>
       <div class="nav-item" (click)="toggleMenu()">
-        <a href="#langauges"><h3>LANGUAGES</h3></a>
+        <a href="#languages"><h3>LANGUAGES</h3></a>
       </div>
       <div class="nav-item" (click)="toggleMenu()">
         <a href="#projects"><h3>PROJECTS</h3></a>
@@ -113,7 +113,7 @@
         <input type="text"[(ngModel)]="lastName" name="lastName" placeholder="Last Name" required minlegth="4" maxlength="24" >
         <input type="text"name="phone" [(ngModel)]="phone" placeholder="Phone" required minlength="4" maxlength="24" >
         <input type="email"name="email" [(ngModel)]="email" placeholder="Email" pattern="[A-Za-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required minlength="4" maxlength="24" >
-        <input type="text"name="message" [(ngModel)]="message" placeholder="Message" required minlength="4" maxlength="24" >
+        <input type="text"name="message" [(ngModel)]="message" placeholder="Message" required minlength="4" maxlength="260" >
         <input type="submit" *ngIf="contactForm.form.valid" value="Fire!" class="submit" [disabled]="!contactForm.form.valid">
       </form>
       <i [@thumbUp]="thumbState"class="fa fa-thumbs-o-up fa-5x" aria-hidden="true"></i>
