@@ -112,7 +112,7 @@
         <input type="text"name="firstName" [(ngModel)]="firstName" placeholder="{{firstName}}" required minlength="4" maxlength="24">
         <input type="text"[(ngModel)]="lastName" name="lastName" placeholder="Last Name" required minlegth="4" maxlength="24" >
         <input type="text"name="phone" [(ngModel)]="phone" placeholder="Phone" required minlength="4" maxlength="24" >
-        <input type="email"name="email" [(ngModel)]="email" placeholder="Email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required minlength="4" maxlength="24" >
+        <input type="email"name="email" [(ngModel)]="email" placeholder="Email" pattern="[A-Za-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required minlength="4" maxlength="24" >
         <input type="text"name="message" [(ngModel)]="message" placeholder="Message" required minlength="4" maxlength="24" >
         <input type="submit" *ngIf="contactForm.form.valid" value="Fire!" class="submit" [disabled]="!contactForm.form.valid">
       </form>
