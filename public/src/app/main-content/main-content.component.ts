@@ -250,7 +250,6 @@ export class MainContentComponent implements OnInit {
 
   sendEmail(data){
     this.submit = "void";
-    console.log("in here", data)
 
     this.form_service.sendEmail(data)
     .then((data) => {
