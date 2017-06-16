@@ -7,10 +7,12 @@ module.exports = (function(){;
       let transporter = nodemailer.createTransport({
         service: 'gmail',
         host: "smtp.gmail.com",
+        port: 465,
         auth: {
           user: 'rhuxdesign@gmail.com',
           pass: 'Freak103!'
-        }
+        },
+        secure: true;
       });
       let mailOptions = {
         from: '"My Website" <rhuxdesign@gmail.com>',
