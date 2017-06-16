@@ -1,5 +1,6 @@
 import { Component,  OnInit, trigger, state, style, transition, animate, HostListener, keyframes } from '@angular/core';
 import { IntroService } from '../intro/intro.service';
+import { FormService } from '../form.service';
 import { Form } from './form'
 
 @Component({
@@ -173,7 +174,7 @@ export class MainContentComponent implements OnInit {
   message: string = "";
 
 
-  constructor(private introService: IntroService) { }
+  constructor(private introService: IntroService, private form_service: FormService) { }
 
   ngOnInit() {
     this.menu = document.getElementsByClassName('menu');
@@ -230,6 +231,7 @@ export class MainContentComponent implements OnInit {
   }
 
   toggleForm(){
+    this.thumbState = "inactive";
     this.formState = this.formState == "inactive" ? "active" : "inactive";
   }
 
@@ -246,12 +248,23 @@ export class MainContentComponent implements OnInit {
     this.contact = this.contact == "Contact" ? "Close" : "Contact";
   }
 
-  toggleSubmit(){
+  sendEmail(data){
     this.submit = "void";
+    console.log("in here", data)
+
+    this.form_service.sendEmail(data)
+    .then((data) => {
+      console.log("Success in component", data)
+    })
+    .catch(err => {console.log(err)})
+
     setTimeout(()=>{
       this.thumbState = "active";
-      setTimeout(()=>{this.toggleForm(); this.clearForm()},3000);
-  },1000)
+      setTimeout(()=>{
+        this.toggleForm();
+        this.clearForm()},
+        3000);
+    },1000)
   }
 
   toggleSoonMessage(){

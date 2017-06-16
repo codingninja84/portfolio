@@ -26,7 +26,6 @@ export class LanguagesComponent implements OnInit {
   ngOnInit() {
 
     this.boxes = document.getElementsByClassName('box');
-    console.log(this.boxes)
     setTimeout(()=>{this.slider()},2000);
   }
 

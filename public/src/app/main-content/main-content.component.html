@@ -102,14 +102,19 @@
 
   <div [@formModal]="formState" class="modal">
     <div class="modal-content">
-      <form [@playSubmit]="submit" *ngIf="formState == 'active'" class="form" name="contactForm" #contactForm="ngForm"  method="post">
+      <form [@playSubmit]="submit"
+      *ngIf="formState == 'active'"
+      class="form" name="contactForm"
+      #contactForm="ngForm"
+      (submit)="sendEmail(contactForm)" method="post">
+
         <div *ngIf="contactForm.form.dirty" class="errors">All fields required at least 4 characters.</div>
         <input type="text"name="firstName" [(ngModel)]="firstName" placeholder="{{firstName}}" required minlength="4" maxlength="24">
         <input type="text"[(ngModel)]="lastName" name="lastName" placeholder="Last Name" required minlegth="4" maxlength="24" >
         <input type="text"name="phone" [(ngModel)]="phone" placeholder="Phone" required minlength="4" maxlength="24" >
         <input type="email"name="email" [(ngModel)]="email" placeholder="Email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required minlength="4" maxlength="24" >
         <input type="text"name="message" [(ngModel)]="message" placeholder="Message" required minlength="4" maxlength="24" >
-        <input type="submit" *ngIf="contactForm.form.valid" value="Fire!" class="submit" [disabled]="!contactForm.form.valid" (click)="toggleSubmit()">
+        <input type="submit" *ngIf="contactForm.form.valid" value="Fire!" class="submit" [disabled]="!contactForm.form.valid">
       </form>
       <i [@thumbUp]="thumbState"class="fa fa-thumbs-o-up fa-5x" aria-hidden="true"></i>
     </div>
