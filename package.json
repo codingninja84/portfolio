@@ -15,6 +15,5 @@
     "mongoose": "^4.9.5",
     "web-animations-js": "^2.2.5",
     "nodemailer": "^4.0.1"
-
   }
 }
