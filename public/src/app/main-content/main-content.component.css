@@ -557,6 +557,7 @@ input {
 
   .black {
     height: 80vh;
+    min-height: 500px;
     flex-direction: column;
     text-align: center;
   }
@@ -643,6 +644,7 @@ input {
 
   .black {
     height: 80vh;
+    min-height: 500px;
     flex-direction: column;
     text-align: center;
   }
@@ -755,6 +757,7 @@ input {
 
   .black {
     height: 80vh;
+    min-height: 500px;
     flex-direction: column;
     text-align: center;
   }

@@ -123,6 +123,8 @@
 
   .container{
     flex-direction: column-reverse;
+    height: auto;
+    min-height: 880px;
   }
 
   .row-top {
@@ -150,6 +152,7 @@
   .container{
     flex-direction: column-reverse;
     height: auto;
+    min-height: 895px;
   }
 
   .row-top {
@@ -177,6 +180,7 @@
   .container{
     flex-direction: column-reverse;
     height: auto;
+    min-height: 730px;
   }
 
   .row-top {

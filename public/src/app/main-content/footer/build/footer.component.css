@@ -50,6 +50,7 @@
 
 .menu {
   height: 70%;
+  min-height: 70%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -95,6 +96,10 @@ i {
     height: 70vh;
   }
 
+  .row {
+    min-height: 90%;
+  }
+
   .column {
     height: 25%;
     width: 50%;
@@ -127,6 +132,10 @@ i {
 @media only screen and (min-width: 371px){
   .full-width-component {
     height: 70vh;
+  }
+
+  .row {
+    min-height: 90%;
   }
 
   .column {
@@ -172,6 +181,10 @@ i {
 @media only screen and (min-width: 600px){
   .full-width-component {
     height: 50vh;
+  }
+
+  .row {
+    min-height: 90%;
   }
 
   .menu {
