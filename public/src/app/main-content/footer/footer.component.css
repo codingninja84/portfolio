@@ -66,6 +66,7 @@ i {
 @media only screen and (max-width: 370px){
   .full-width-component {
     height: auto;
+
   }
 
   .column {
